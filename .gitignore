@@ -31,3 +31,4 @@ coverage/
 # local research models (not for production; loaded from CDN at runtime)
 test-models/
 tsconfig.tsbuildinfo
+src/lib/lame.all.bundle.js
