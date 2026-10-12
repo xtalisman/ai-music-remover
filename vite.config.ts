@@ -2,9 +2,9 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 
-// Base path: '/ai-music-remover/' for the free github.io URL.
-// Override with VITE_BASE_PATH=/ when a custom domain is connected.
-const base = process.env.VITE_BASE_PATH ?? '/ai-music-remover/';
+// Base path: '/' for Vercel (primary). Override with VITE_BASE_PATH=/ai-music-remover/
+// if deploying to GitHub Pages project URL.
+const base = process.env.VITE_BASE_PATH ?? '/';
 
 export default defineConfig({
   base,
