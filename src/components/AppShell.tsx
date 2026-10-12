@@ -202,7 +202,7 @@ function SidebarBody({ collapsed, onNavigate }: { collapsed: boolean; onNavigate
           collapsed ? 'justify-center px-0' : ''
         }`}
       >
-        <img src={`${logoBase}logo.svg`} alt="AI Music Remover logo" className="w-8 h-8 rounded-xl shrink-0" />
+        <img src={`${logoBase}logo-icon.webp`} alt="AI Music Remover logo" className="w-8 h-8 rounded-xl shrink-0" />
         {!collapsed && <span className="font-bold text-[15px] whitespace-nowrap">AI Music Remover</span>}
       </Link>
 
