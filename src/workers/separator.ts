@@ -17,9 +17,7 @@ const MODEL_URLS: Record<StemName, string> = {
   bass: `${MODEL_BASE}/bass.fp16.onnx`,
   other: `${MODEL_BASE}/other.fp16.onnx`,
 };
-// jsDelivr serves the ORT .wasm files (the JS loader 404s there, so we bundle
-// onnxruntime-web via npm and only point wasmPaths at the CDN).
-const ORT_WASM_CDN = 'https://cdn.jsdelivr.net/npm/onnxruntime-web@1.20.0/dist/';
+// Model cache version (bump to force re-download if models change).
 const MODEL_CACHE = 'aimr-models-v2';
 // Inference batch size (splits of 512 frames each); keeps WASM memory bounded.
 const INFER_BATCH_SPLITS = 4;
@@ -29,9 +27,10 @@ const sessions = new Map<StemName, ort.InferenceSession>();
 
 function configureOrt(): void {
   if (ortConfigured) return;
-  ort.env.wasm.wasmPaths = ORT_WASM_CDN;
-  // WASM threads need cross-origin isolation (COOP/COEP), which static hosts
-  // like GitHub Pages can't provide — fall back to a single thread there.
+  // WASM files are bundled locally by Vite (dist/assets/ort-wasm-*.wasm).
+  // Do NOT override wasmPaths — the default resolves relative to the bundle.
+  // WASM threads need cross-origin isolation (COOP/COEP), which Vercel now
+  // provides via vercel.json headers — fall back to a single thread otherwise.
   try {
     ort.env.wasm.numThreads = (typeof crossOriginIsolated !== 'undefined' && crossOriginIsolated) ? 4 : 1;
   } catch {
