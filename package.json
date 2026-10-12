@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "prebuild": "node scripts/prepare-lame.mjs"
+    "prebuild": "node scripts/prepare-lame.mjs && node scripts/generate-demos.mjs"
   },
   "dependencies": {
     "@xenova/transformers": "^2.17.2",

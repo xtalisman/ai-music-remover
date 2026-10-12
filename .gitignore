@@ -32,3 +32,4 @@ coverage/
 test-models/
 tsconfig.tsbuildinfo
 src/lib/lame.all.bundle.js
+public/samples/*.wav
