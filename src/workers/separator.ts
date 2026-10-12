@@ -20,7 +20,7 @@ const MODEL_URLS: Record<StemName, string> = {
 // jsDelivr serves the ORT .wasm files (the JS loader 404s there, so we bundle
 // onnxruntime-web via npm and only point wasmPaths at the CDN).
 const ORT_WASM_CDN = 'https://cdn.jsdelivr.net/npm/onnxruntime-web@1.20.0/dist/';
-const MODEL_CACHE = 'aimr-models-v1';
+const MODEL_CACHE = 'aimr-models-v2';
 // Inference batch size (splits of 512 frames each); keeps WASM memory bounded.
 const INFER_BATCH_SPLITS = 4;
 
@@ -67,7 +67,10 @@ async function fetchWithProgress(
   let off = 0;
   for (const c of chunks) { merged.set(c, off); off += c.length; }
   onProgress(1);
-  await cache.put(url, new Response(merged.buffer));
+  // Copy the buffer for the cache: cache.put() may detach/neuter the
+  // ArrayBuffer, which would corrupt the copy we return for ORT.
+  const cacheBuf = merged.buffer.slice(0);
+  await cache.put(url, new Response(cacheBuf));
   return merged.buffer;
 }
 
