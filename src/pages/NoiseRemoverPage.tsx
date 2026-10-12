@@ -6,10 +6,12 @@ import { runAudioJob } from '../lib/workerClient';
 import { decodeAudioFile, resampleTo44100, encodeWav, formatTime } from '../lib/audio';
 import { encodeMp3 } from '../lib/mp3';
 import { saveJob } from '../lib/history';
+import { useRequireAuth } from '../lib/auth';
 
 type Phase = 'idle' | 'loading' | 'ready' | 'processing' | 'done' | 'error';
 
 function NoiseRemoverWidget() {
+  const requireAuth = useRequireAuth();
   const [phase, setPhase] = useState<Phase>('idle');
   const [fileName, setFileName] = useState('');
   const [durationSec, setDurationSec] = useState(0);
@@ -111,7 +113,7 @@ function NoiseRemoverWidget() {
             </p>
           </label>
           <div className="flex gap-3">
-            <button onClick={clean} className="flex-1 py-3 rounded-full bg-accent text-[var(--color-accent-text)] font-bold">
+            <button onClick={() => requireAuth(clean)} className="flex-1 py-3 rounded-full bg-accent text-[var(--color-accent-text)] font-bold">
               Remove noise
             </button>
             <button onClick={reset} className="px-6 py-3 rounded-full border border-border">New file</button>

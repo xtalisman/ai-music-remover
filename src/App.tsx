@@ -1,7 +1,7 @@
 import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import SiteHeader from './components/SiteHeader';
-import SiteFooter from './components/SiteFooter';
+import { AuthProvider } from './lib/auth';
+import AppShell from './components/AppShell';
 import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
 
@@ -36,9 +36,8 @@ function PageLoader() {
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-background text-ink flex flex-col">
-      <SiteHeader />
-      <main className="flex-1">
+    <AuthProvider>
+      <AppShell>
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -63,8 +62,7 @@ export default function App() {
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>
-      </main>
-      <SiteFooter />
-    </div>
+      </AppShell>
+    </AuthProvider>
   );
 }

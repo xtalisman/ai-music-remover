@@ -5,6 +5,7 @@ import ResultPlayer from '../components/ResultPlayer';
 import { runAudioJob, buffersToChannels } from '../lib/workerClient';
 import { decodeAudioFile, resampleTo44100, encodeWav, formatTime } from '../lib/audio';
 import { encodeMp3 } from '../lib/mp3';
+import { useRequireAuth } from '../lib/auth';
 import { detectBpm, detectKey, semitonesBetween } from '../workers/analysis';
 
 interface TrackData {
@@ -59,6 +60,7 @@ export default function MashupMakerPage() {
 }
 
 function MashupWidget() {
+  const requireAuth = useRequireAuth();
   const [phase, setPhase] = useState<Phase>('idle');
   const [status, setStatus] = useState('');
   const [progress, setProgress] = useState(0);
@@ -195,7 +197,7 @@ function MashupWidget() {
               ✓ Track A: {trackA.fileName} ({trackA.bpm || '?'} BPM, {trackA.key})
             </p>
           )}
-          <UploadWidget key={slot} onFile={handleFile} compact />
+          <UploadWidget key={slot} onFile={(f) => requireAuth(() => handleFile(f))} compact />
           {trackA && (
             <div className="text-center mt-3">
               <button onClick={() => { setTrackA(null); setSlot('A'); }} className="text-sm text-muted underline">Replace track A</button>

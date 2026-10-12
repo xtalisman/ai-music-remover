@@ -3,6 +3,7 @@ import ToolPage from '../components/ToolPage';
 import UploadWidget from '../components/UploadWidget';
 import { transcribeAudio, to16kMono, translateTexts, type TranscriptChunk } from '../lib/transcribeClient';
 import { decodeAudioFile, formatTime } from '../lib/audio';
+import { useRequireAuth } from '../lib/auth';
 
 type Phase = 'idle' | 'loading' | 'transcribing' | 'translating' | 'done' | 'error';
 
@@ -27,6 +28,7 @@ function fmtSrt(t: number): string {
 }
 
 function TranslatorWidget() {
+  const requireAuth = useRequireAuth();
   const [phase, setPhase] = useState<Phase>('idle');
   const [fileName, setFileName] = useState('');
   const [progress, setProgress] = useState(0);
@@ -115,7 +117,7 @@ function TranslatorWidget() {
               {PAIRS.map((p, i) => <option key={p.model} value={i}>{p.label}</option>)}
             </select>
           </label>
-          <UploadWidget onFile={handleFile} accept="audio/*,video/*,.mp3,.wav,.m4a,.mp4,.ogg,.webm" />
+          <UploadWidget onFile={(f) => requireAuth(() => handleFile(f))} accept="audio/*,video/*,.mp3,.wav,.m4a,.mp4,.ogg,.webm" />
           <p className="text-xs text-muted text-center mt-3">
             Supported: {PAIRS.map((p) => p.label).join(' · ')}. More pairs coming soon.
           </p>

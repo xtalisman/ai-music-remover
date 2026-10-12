@@ -3,6 +3,7 @@ import ToolPage from '../components/ToolPage';
 import UploadWidget from '../components/UploadWidget';
 import { transcribeAudio, to16kMono, type TranscriptChunk } from '../lib/transcribeClient';
 import { decodeAudioFile, formatTime } from '../lib/audio';
+import { useRequireAuth } from '../lib/auth';
 
 type Phase = 'idle' | 'loading' | 'transcribing' | 'done' | 'error';
 
@@ -13,6 +14,7 @@ function fmtSrt(t: number): string {
 function fmtVtt(t: number): string { return fmtSrt(t).replace(',', '.'); }
 
 function TranscribeWidget() {
+  const requireAuth = useRequireAuth();
   const [phase, setPhase] = useState<Phase>('idle');
   const [fileName, setFileName] = useState('');
   const [progress, setProgress] = useState(0);
@@ -89,7 +91,7 @@ function TranscribeWidget() {
 
   return (
     <div className="max-w-3xl mx-auto">
-      {phase === 'idle' && <UploadWidget onFile={handleFile} accept="audio/*,video/*,.mp3,.wav,.m4a,.mp4,.ogg,.webm" />}
+      {phase === 'idle' && <UploadWidget onFile={(f) => requireAuth(() => handleFile(f))} accept="audio/*,video/*,.mp3,.wav,.m4a,.mp4,.ogg,.webm" />}
       {phase === 'loading' && <p className="text-center py-12 text-muted">Reading {fileName}…</p>}
       {phase === 'transcribing' && (
         <div className="rounded-[var(--radius-card)] border border-border bg-surface p-8 text-center">
