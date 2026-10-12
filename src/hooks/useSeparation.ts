@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { runAudioJob, buffersToChannels } from '../lib/workerClient';
 import { decodeAudioFile, resampleTo44100 } from '../lib/audio';
+import { useRequireAuth } from '../lib/auth';
 
 export type SepPhase = 'idle' | 'loading' | 'ready' | 'processing' | 'done' | 'error';
 
@@ -47,7 +48,10 @@ export function useSeparation() {
     }
   }, []);
 
+  const requireAuth = useRequireAuth();
+
   const separate = useCallback((mode: 'ai' | 'fast') => {
+    requireAuth(() => {
     const audio = audioRef.current;
     if (!audio) return;
     setPhase('processing');
@@ -92,7 +96,8 @@ export function useSeparation() {
         setPhase('error');
       },
     );
-  }, []);
+    });
+  }, [requireAuth]);
 
   const cancel = useCallback(() => jobRef.current?.cancel(), []);
 

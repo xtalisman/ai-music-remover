@@ -4,6 +4,7 @@ import ResultPlayer, { PlayerTrack } from './ResultPlayer';
 import { runAudioJob, buffersToChannels, type JobResult } from '../lib/workerClient';
 import { decodeAudioFile, resampleTo44100, encodeWav, mixStems, formatTime, deviceCapabilities } from '../lib/audio';
 import { saveJob } from '../lib/history';
+import { useRequireAuth } from '../lib/auth';
 
 type Phase = 'idle' | 'loading' | 'ready' | 'processing' | 'done' | 'error';
 
@@ -58,7 +59,8 @@ export default function SeparationWidget() {
     }
   };
 
-  const startSeparation = () => {
+  const requireAuth = useRequireAuth();
+  const startSeparation = () => requireAuth(() => {
     const audio = audioRef.current;
     if (!audio) return;
     setPhase('processing');
@@ -81,7 +83,7 @@ export default function SeparationWidget() {
         setPhase('error');
       },
     );
-  };
+  });
 
   const buildResults = (result: JobResult) => {
     if (result.kind === 'audio') {
