@@ -27,14 +27,19 @@ const sessions = new Map<StemName, ort.InferenceSession>();
 
 function configureOrt(): void {
   if (ortConfigured) return;
-  // WASM files are bundled locally by Vite (dist/assets/ort-wasm-*.wasm).
-  // Do NOT override wasmPaths — the default resolves relative to the bundle.
-  // WASM threads need cross-origin isolation (COOP/COEP), which Vercel now
-  // provides via vercel.json headers — fall back to a single thread otherwise.
+  // WASM files are copied to dist/assets/ by vite-plugin-static-copy.
+  // Set wasmPaths explicitly so ORT finds both the main .wasm and .jsep.wasm.
+  // The threaded build requires both files; without the .jsep.wasm,
+  // InferenceSession.create() hangs indefinitely.
   try {
-    ort.env.wasm.numThreads = (typeof crossOriginIsolated !== 'undefined' && crossOriginIsolated) ? 4 : 1;
-  } catch {
+    const baseUrl = `${import.meta.env.BASE_URL}assets/`;
+    ort.env.wasm.wasmPaths = baseUrl;
+    // Single-threaded mode: more reliable than multi-threaded, which needs
+    // additional worker files that are hard to bundle correctly.
+    // (COOP/COEP headers are still set for future threading support.)
     ort.env.wasm.numThreads = 1;
+  } catch {
+    // ignore — defaults are fine
   }
   ortConfigured = true;
 }
