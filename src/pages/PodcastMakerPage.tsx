@@ -239,35 +239,37 @@ export default function PodcastMakerPage() {
       path="/ai-podcast-maker"
       seoTitle="AI Podcast Maker — Script Studio & Voice Preview Free | AI Music Remover"
       seoDescription="Build podcast episodes free in your browser: script templates, 1-2 host voices, background music with ducking, live preview and script export."
-      h1="Make your podcast episode"
-      sub="Write your script with our episode template, pick host voices, add background music — then preview it live."
+      h1="Make Your Podcast Episode — Free AI Podcast Maker (Beta)"
+      sub="Write your episode with our script template, cast one or two AI host voices, add background music with automatic ducking, and preview the whole thing read aloud — right in your browser. Draft episodes in minutes instead of hours, hear how your script flows before you record, and export your script and project files free."
       badge="Beta"
       widget={<PodcastStudio />}
       steps={[
-        { title: 'Write your script', text: 'Use the built-in intro / segments / outro template — we estimate the runtime as you type.' },
-        { title: 'Cast your hosts', text: 'Pick from your device\u2019s voices for one or two hosts, set the pace.' },
-        { title: 'Add music & preview', text: 'Upload background music with auto-ducking, then hear the full episode read aloud.' },
+        { title: 'Write with the episode template', text: 'Start from our proven intro → segments → outro structure. A live word count and runtime estimate (~150 words/minute) shows your episode length as you type, so you\u2019ll know if you\u2019re at 10 minutes or 40 before you record a second.' },
+        { title: 'Cast your hosts', text: 'Choose from your device\u2019s built-in text-to-speech voices — assign different voices to different sections for interview-style episodes with two hosts, or keep one consistent voice for solo shows. Adjust the speaking pace to match your style.' },
+        { title: 'Add background music', text: 'Upload your intro/outro music or ambient bed. Automatic ducking lowers the music whenever a host is speaking and brings it back up in pauses — the professional radio sound, done for you.' },
+        { title: 'Preview and refine', text: 'Hit preview and hear your entire episode read aloud. Catch awkward phrasing, timing issues, and flow problems before you spend an hour recording. Export your script as TXT or save the full project as JSON.' },
       ]}
       features={[
-        { icon: '📝', title: 'Episode template', text: 'Intro, segments and outro structure with live word-count and timing.' },
-        { icon: '🎙️', title: '1–2 hosts', text: 'Assign sections to different voices for interview-style episodes.' },
-        { icon: '🎵', title: 'Music ducking', text: 'Background music automatically dips under speech.' },
-        { icon: '💯', title: 'Free', text: 'No accounts, no per-minute fees.' },
-        { icon: '🔒', title: 'Private', text: 'Your script never leaves your device.' },
-        { icon: '💾', title: 'Project export', text: 'Save your episode as a reusable project file.' },
+        { icon: '📝', title: 'Smart episode template', text: 'A proven intro/segments/outro structure with live word-count and runtime estimates. You\u2019ll always know exactly how long your episode will run.' },
+        { icon: '🎙️', title: 'One or two AI hosts', text: 'Assign script sections to different voices for interview or co-hosted formats. Each voice can have its own pace — snappy for the host, measured for the guest.' },
+        { icon: '🎵', title: 'Automatic music ducking', text: 'Background music intelligently dips under speech and swells in pauses, just like a professional radio producer would ride the faders. No manual keyframing.' },
+        { icon: '💯', title: 'Free with no per-minute fees', text: 'AI voice platforms charge per character or per minute — costs that add up fast. Ours uses your device\u2019s built-in voices: unlimited previewing, zero fees.' },
+        { icon: '🔒', title: 'Your script stays private', text: 'Unpublished episode ideas, interview questions, proprietary content — it all stays in your browser. Nothing is uploaded or stored on any server.' },
+        { icon: '💾', title: 'Project save and export', text: 'Export your script as a clean TXT file for your records, or save the entire project (script + voice assignments + music) as JSON to pick up right where you left off.' },
       ]}
       useCases={[
-        { title: 'Solo shows', text: 'Draft and hear your monologue episodes before recording.' },
-        { title: 'Interview prep', text: 'Script both sides of an interview to rehearse the flow.' },
-        { title: 'Internal updates', text: 'Turn written updates into listenable briefings.' },
-        { title: 'Accessibility', text: 'Give written content a spoken version.' },
+        { title: 'Draft solo episodes before recording', text: 'Write your monologue, hear it read back, and fix the parts that sound awkward on paper but terrible out loud. You\u2019ll cut your recording time in half because the script is already proven.' },
+        { title: 'Rehearse interview flows', text: 'Script both the host questions and expected guest answers to rehearse timing, transitions, and follow-ups. Walk into the real interview knowing exactly how the conversation should flow.' },
+        { title: 'Turn written updates into audio briefings', text: 'Teams and companies: paste your weekly update, assign a voice, and generate a listenable briefing your team can play during their commute. Internal comms people will love you.' },
+        { title: 'Make content accessible', text: 'Give every blog post, newsletter, and document a spoken version. Your audience can listen instead of read — and you\u2019re serving listeners with visual impairments or reading difficulties.' },
       ]}
       faqs={[
-        { q: 'How do the voices work?', a: 'We use your device\u2019s built-in text-to-speech voices, so there\u2019s nothing to download and it works offline. Voice choice varies by device and browser.' },
-        { q: 'Can I export an MP3 of the episode?', a: 'Not yet — offline neural-voice MP3 export is in development. For now you can preview the full episode live and export the script.' },
-        { q: 'Is my script private?', a: 'Yes. Everything, including the script text, stays in your browser.' },
-        { q: 'How accurate is the runtime estimate?', a: 'It assumes ~150 words per minute. Actual pacing varies with the voice and content.' },
-        { q: 'Is it free?', a: 'Completely free, no sign-up.' },
+        { q: 'How do the AI host voices work?', a: 'We use your device\u2019s built-in text-to-speech engine (the Web Speech API) — the same voices your phone uses for navigation and accessibility features. That means there\u2019s nothing to download, it works offline, and it\u2019s completely free with no per-character fees (unlike cloud AI voice services that charge by the minute). The available voices depend on your device and operating system: Windows includes Microsoft\u2019s neural voices, macOS and iOS have Apple\u2019s high-quality voices, Android has Google\u2019s voices, and ChromeOS has its own set. You\u2019ll typically find 5-30 voices including multiple languages and accents. Preview each one to find your hosts.' },
+        { q: 'Can I export a finished MP3 of my episode?', a: 'Not yet — and we want to be upfront about it. Right now you can preview the full episode live (with voices, pacing, and ducked background music) and export your script as TXT or the project as JSON. True offline MP3 rendering with neural voices is in active development. The challenge is capturing the browser\u2019s speech synthesis — which plays through your speakers — into a downloadable file, which browsers don\u2019t natively support. We\u2019re exploring workarounds including MediaRecorder-based capture. For now, the preview is perfect for script review and rehearsal, which is where most podcasters waste the most time anyway.' },
+        { q: 'Is my episode script private?', a: 'Completely. Your script text, voice choices, and uploaded background music never leave your browser — there\u2019s no server to send them to. This matters for unreleased episode ideas, embargoed interview content, proprietary company updates, or anything you wouldn\u2019t want leaking. Even our analytics (if any) can\u2019t see your content because it never traverses the network. Your creative work stays yours, period.' },
+        { q: 'How accurate is the runtime estimate?', a: 'We estimate ~150 words per minute, which is the average conversational speaking pace for English podcast content. In practice, actual timing varies: a fast-talking host voice might hit 170 WPM, while a dramatic pause-heavy read could drop to 120 WPM. Dense technical content reads slower than casual chat. Think of the estimate as a reliable ballpark — if it says 22 minutes, plan for 20-25. The preview feature is the real timing tool: listen to the actual read-through and you\u2019ll know precisely how your episode paces.' },
+        { q: 'Why is this marked Beta?', a: 'Because we\u2019re honest about what it can and can\u2019t do yet. The script studio, voice preview, music ducking, and project export all work reliably — that\u2019s the solid foundation. What\u2019s missing is the one-click "render finished MP3" that would make it a complete production tool. Rather than fake that feature or hide the limitation in fine print, we label it Beta and tell you exactly what to expect. As the MP3 export and additional voices land, the Beta tag comes off. We\u2019d rather under-promise and over-deliver.' },
+        { q: 'Is the podcast maker really free?', a: 'Yes — no accounts, no per-minute charges, no "5 free episodes" trial. Cloud AI voice services typically charge $20-100/month for the kind of voice preview we offer, because they pay for server GPU time per character generated. We sidestep those costs entirely by using your device\u2019s built-in text-to-speech, which is already paid for (it came with your OS). Unlimited episodes, unlimited previewing, unlimited script length. The only thing we ask: if it saves you time, tell another podcaster.' },
       ]}
     />
   );
