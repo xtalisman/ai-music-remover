@@ -25,35 +25,37 @@ export default function MashupMakerPage() {
       path="/ai-mashup-maker"
       seoTitle="AI Mashup Maker — Blend Vocals & Instrumentals Free | AI Music Remover"
       seoDescription="Create mashups in your browser: AI separates both tracks, matches tempo and key automatically, and blends vocals over a new instrumental. Free."
-      h1="Make mashups like a producer"
-      sub="Upload two songs — AI takes the vocals from one and lays them over the instrumental of the other, matched in tempo and key."
+      h1="Make Mashups Like a Producer — Free AI Mashup Maker"
+      sub="Upload two songs and our free AI mashup maker does the rest: it separates the vocals from one track and the instrumental from the other, automatically matches their tempo and musical key, then blends them into a seamless mashup. Preview it instantly, fine-tune the blend, and download your creation as MP3 or WAV — all in your browser, all free."
       badge="AI Mashup Maker"
       widget={<MashupWidget />}
       steps={[
-        { title: 'Upload two tracks', text: 'Track A provides the vocals, track B provides the instrumental.' },
-        { title: 'AI analyzes & matches', text: 'Both tracks are separated, then tempo and key are detected and matched automatically.' },
-        { title: 'Preview & download', text: 'Hear your mashup instantly, tweak the blend, and export MP3 or WAV.' },
+        { title: 'Upload two tracks', text: 'Track A provides the vocals (the acapella source), Track B provides the instrumental (the beat). Any MP3, WAV, or M4A works — pick songs you have the rights to use.' },
+        { title: 'AI separates and analyzes', text: 'Our stem-separation AI extracts clean vocals from Track A and a full instrumental from Track B. Then it detects each track\u2019s BPM and musical key automatically.' },
+        { title: 'Tempo and key matched', text: 'The instrumental is time-stretched to Track A\u2019s tempo and pitch-shifted into a compatible key — so the vocals sit naturally on the beat instead of clashing.' },
+        { title: 'Blend, preview, download', text: 'Hear your mashup instantly. Adjust the vocal/instrumental balance with the blend sliders, re-blend, and export the final mix as MP3 or WAV.' },
       ]}
       features={[
-        { icon: '🤖', title: 'AI stem separation', text: 'Clean vocal and instrumental extraction from both tracks.' },
-        { icon: '⏱️', title: 'Automatic tempo match', text: 'BPM detection aligns both tracks to the same tempo.' },
-        { icon: '🎹', title: 'Key matching', text: 'Pitch detection suggests the transposition that puts both tracks in key.' },
-        { icon: '🎚️', title: 'Blend control', text: 'Balance vocals against the instrumental to taste.' },
-        { icon: '💯', title: 'Free & private', text: 'No accounts, no uploads — everything happens on your device.' },
-        { icon: '🎵', title: 'MP3/WAV export', text: 'Download your mashup ready to share.' },
+        { icon: '🤖', title: 'AI stem separation on both tracks', text: 'Clean vocal extraction from Track A and full instrumental isolation from Track B — powered by the same neural models as our 4-stem splitter.' },
+        { icon: '⏱️', title: 'Automatic tempo matching', text: 'BPM detection finds each track\u2019s tempo, then time-stretches the instrumental to lock onto the vocal track\u2019s groove. No manual beat-matching required.' },
+        { icon: '🎹', title: 'Smart key matching', text: 'Musical key detection suggests the exact transposition (in semitones) that puts both tracks in a compatible key, so the mashup sounds intentional, not accidental.' },
+        { icon: '🎚️', title: 'Blend control', text: 'Fine-tune the balance between vocals and instrumental with simple sliders. Push the vocals forward for an acapella feel, or let the beat dominate.' },
+        { icon: '💯', title: 'Free and private', text: 'No accounts, no uploads, no per-mashup fees. The AI models run on your device, so your unreleased ideas stay completely private.' },
+        { icon: '🎵', title: 'MP3 and WAV export', text: 'Download your finished mashup ready to share on TikTok, SoundCloud, or with friends — MP3 for convenience, WAV for quality.' },
       ]}
       useCases={[
-        { title: 'Viral mashups', text: 'Combine trending vocals with unexpected instrumentals for social content.' },
-        { title: 'DJ blends', text: 'Prototype blends and transitions before your set.' },
-        { title: 'Remix sketches', text: 'Quickly hear how an acapella sits over a different beat.' },
-        { title: 'Fun experiments', text: 'Hear your favorite singer over a completely different genre.' },
+        { title: 'Viral TikTok and Reels mashups', text: 'The classic formula: trending vocals over an unexpected beat. Create the kind of genre-bending mashups that rack up millions of views — Billie Eilish over a phonk beat, or a Bollywood vocal on a drill instrumental.' },
+        { title: 'DJ blends and transition ideas', text: 'Prototype blends before your set. Hear how that acapella sits over your next track\u2019s instrumental, dial in the blend, and walk into the booth with confidence.' },
+        { title: 'Remix sketches in minutes', text: 'Got a remix idea at 2am? Instead of spending hours in a DAW, hear a rough version in minutes. If the concept works, take the idea into the studio properly.' },
+        { title: 'Just-for-fun experiments', text: 'What does your favorite singer sound like over a completely different genre? There\u2019s no wrong answer — mashups are play, and play is how great ideas start.' },
       ]}
       faqs={[
-        { q: 'How does the tempo matching work?', a: 'We detect the BPM of both tracks, then time-stretch the instrumental to the vocal track\u2019s tempo without changing its pitch.' },
-        { q: 'What if the keys clash?', a: 'Key detection suggests a transposition in semitones. Apply it to the instrumental so both parts sit in a compatible key.' },
-        { q: 'Do I need the rights to both songs?', a: 'Yes — only mash up tracks you have the rights to use. This tool is for personal, educational and properly licensed creative work.' },
-        { q: 'Is it free?', a: 'Completely. The AI models run on your device, so there are no per-track costs.' },
-        { q: 'How long does it take?', a: 'Separating two tracks takes a few minutes on first run (models download once). Mixing itself is fast.' },
+        { q: 'How does the AI mashup maker work?', a: 'It\u2019s a four-stage pipeline, all running in your browser. First, you upload two tracks: Track A (the vocal source) and Track B (the instrumental source). Second, our neural stem-separation models extract the isolated vocals from Track A and the full instrumental (drums + bass + other) from Track B. Third, the app analyzes both tracks — detecting BPM (tempo) with an onset-detection algorithm and musical key with a chroma-based classifier. Fourth, it time-stretches Track B\u2019s instrumental to match Track A\u2019s tempo and pitch-shifts it by the suggested number of semitones so both parts sit in a compatible key. Finally, the two are mixed together with your chosen balance levels. The whole thing feels like magic, but it\u2019s just careful DSP and machine learning working together.' },
+        { q: 'What makes a good mashup combination?', a: 'The best mashups usually pair vocals and instrumentals with complementary energy. Start with the tempo: tracks within 10-15 BPM of each other blend most naturally, though our automatic tempo matching handles bigger gaps. For key, the AI suggests a transposition, but your ears are the final judge — sometimes a deliberately "wrong" key creates an interesting tension. Try contrasting genres (a soul vocal over an electronic beat), matching emotional vibes (melancholic vocal + moody instrumental), or going for pure surprise (opera over hip-hop). There are no rules — some of the most viral mashups work precisely because nobody expected that combination.' },
+        { q: 'How does the automatic tempo and key matching work?', a: 'After separation, we analyze both tracks independently. For tempo, an onset-detection algorithm finds the rhythmic pulses and estimates BPM — the same approach DJ software uses. If Track B is at 128 BPM and Track A is at 100 BPM, we time-stretch B\u2019s instrumental down to 100 BPM using a phase-vocoder that preserves pitch. For key, a chroma-feature classifier identifies each track\u2019s likely musical key (e.g., A minor, F major). We then compute the smallest transposition in semitones that moves B into a compatible key with A, and pitch-shift it. You can disable auto-matching and set things manually if you prefer full control — sometimes the "wrong" settings sound cooler.' },
+        { q: 'Do I need the rights to both songs to make a mashup?', a: 'Yes — this is important. Only mash up tracks you have the rights to use: your own music, royalty-free tracks, or songs where you\u2019ve obtained permission. A mashup is a derivative work, and distributing one made from commercial songs without permission can infringe copyright — even if you made it "just for fun." Posting to TikTok or YouTube often works in practice because those platforms have licensing deals with major publishers (they may monetize for the rights holder or mute in some regions), but that\u2019s the platform\u2019s license, not yours. For anything beyond personal experimentation, get proper clearance or use royalty-free source material.' },
+        { q: 'Is the mashup maker really free? How?', a: 'Completely free, no catches. The stem-separation AI, tempo detection, key detection, time-stretching, and pitch-shifting all run on your device using WebAssembly and the Web Audio API. We don\u2019t operate GPU servers, so we have no per-track costs to pass on to you. No accounts, no watermarks, no limits on how many mashups you create. The AI models (~80MB) download once and are cached in your browser. If you love it, tell a producer friend — that\u2019s the best payment we could ask for.' },
+        { q: 'How long does it take to make a mashup?', a: 'The first run takes a few minutes: the AI models download once (~80MB, cached afterwards), then each track needs 1-3 minutes for stem separation depending on length and your device speed. So two 3-minute tracks might take 5-8 minutes total on first use. After the models are cached, it\u2019s just the separation time. The actual tempo/key matching and blending takes seconds. Tip: while Track A is separating, queue up ideas for Track B — and remember that great mashups are 90% song selection, 10% processing.' },
       ]}
     />
   );
