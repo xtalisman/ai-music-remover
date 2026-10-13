@@ -99,36 +99,37 @@ export default function VocalRemoverPage() {
       path="/vocal-remover"
       seoTitle="Vocal Remover — Remove Vocals from Any Song, Free | AI Music Remover"
       seoDescription="Remove vocals from any song with free AI stem separation in your browser. Download the vocals and instrumental separately. No sign-up, files never leave your device."
-      h1="Remove vocals from any song"
-      sub="Upload a track and get clean vocals and instrumental versions — separated by AI, right in your browser, free."
+      h1="Remove Vocals from Any Song — Free AI Vocal Remover"
+      sub="Upload any song and our free AI vocal remover separates the singing from the music in seconds. Get clean acapella vocals and instrumental tracks right in your browser — no uploads, no sign-up, no cost. Perfect for karaoke, remixes, sampling, and practice."
       badge="AI Vocal Remover"
       widget={<VocalRemoverWidget />}
       steps={[
-        { title: 'Upload your song', text: 'Drop in an MP3, WAV or M4A — or record straight from your microphone.' },
-        { title: 'AI separates the vocals', text: 'A neural network isolates the vocal stem from the instrumental in your browser.' },
-        { title: 'Preview and download', text: 'Listen to each stem, then download the vocals, the instrumental, or both as WAV.' },
+        { title: 'Upload your song', text: 'Drag in an MP3, WAV, M4A or video file — or record directly from your microphone. Files up to 10 minutes work best for AI separation.' },
+        { title: 'Choose your separation mode', text: 'Pick AI Separation for the cleanest vocal isolation (a one-time ~80MB model download), or Instant Mode for immediate results with no download using smart center-channel extraction.' },
+        { title: 'AI isolates the vocals', text: 'A trained neural network analyzes your track\u2019s spectrogram and separates the vocal stem from every instrument — drums, bass, guitars, synths — entirely on your device.' },
+        { title: 'Preview and download stems', text: 'Listen to the isolated vocals and the instrumental separately. Download either or both as high-quality 44.1kHz WAV files, ready for your DAW, video editor, or karaoke setup.' },
       ]}
       features={[
-        { icon: '🤖', title: 'Real AI separation', text: 'A trained neural stem-separation model — not a simple filter — isolates the voice.' },
-        { icon: '💯', title: '100% free', text: 'No credits, no watermarks, no sign-up. Separate as many songs as you like.' },
-        { icon: '🔒', title: 'Private by design', text: 'Everything runs on your device. Your audio is never uploaded anywhere.' },
-        { icon: '⚡', title: 'Instant mode', text: 'Need it now? Instant mode separates centered vocals immediately, no download.' },
-        { icon: '🎧', title: 'Studio-quality output', text: 'Download 44.1kHz WAV stems ready for your DAW or video editor.' },
-        { icon: '📱', title: 'Works everywhere', text: 'Runs in Chrome, Edge, Safari and Firefox — desktop and mobile.' },
+        { icon: '🤖', title: 'Real AI stem separation', text: 'A trained neural network — not a crude center-channel filter — identifies and isolates the human voice with remarkable precision, even in dense mixes.' },
+        { icon: '💯', title: '100% free, forever', text: 'No credits, no watermarks, no trial limits, no sign-up required. Separate as many songs as you want, as often as you want.' },
+        { icon: '🔒', title: 'Private by design', text: 'Every byte of processing happens in your browser. Your audio files are never uploaded to any server — they never leave your device.' },
+        { icon: '⚡', title: 'Two modes for every need', text: 'AI mode delivers the best quality for finished productions. Instant mode gives you immediate results for quick tasks with zero download.' },
+        { icon: '🎧', title: 'Studio-quality WAV output', text: 'Download 44.1kHz WAV stems that drop straight into Ableton, FL Studio, Logic, Premiere, or any professional audio or video software.' },
+        { icon: '📱', title: 'Works on any device', text: 'Runs in Chrome, Edge, Safari, and Firefox on desktop, tablet, and mobile. No app to install, no plugins, no setup.' },
       ]}
       useCases={[
-        { title: 'Make karaoke tracks', text: 'Strip the vocals from your favorite songs for karaoke night or practice sessions.', cta: 'Try Karaoke Maker', ctaHref: '/karaoke-maker' },
-        { title: 'Sample and remix', text: 'Pull clean acapellas for remixes, mashups and sample flips.', cta: 'Try AI Mashup Maker', ctaHref: '/ai-mashup-maker' },
-        { title: 'Practice your instrument', text: 'Remove the vocals to play or sing along with just the band.' },
-        { title: 'Clean up recordings', text: 'Isolate dialogue or vocals from mixed recordings for clearer edits.' },
+        { title: 'Create karaoke tracks', text: 'Strip the lead vocals from any song to make your own karaoke versions. Perfect for parties, practice sessions, or YouTube karaoke channels.', cta: 'Try Karaoke Maker', ctaHref: '/karaoke-maker' },
+        { title: 'Sample vocals for remixes', text: 'Pull clean acapellas from your favorite tracks to chop, pitch, and flip into remixes, mashups, and beats. Every producer\u2019s secret weapon.', cta: 'Try AI Mashup Maker', ctaHref: '/ai-mashup-maker' },
+        { title: 'Practice your instrument', text: 'Remove the vocals so you can sing along with just the band, or isolate the vocals to study the singer\u2019s phrasing and technique note by note.' },
+        { title: 'Clean up recordings', text: 'Separate dialogue or sung vocals from background music in podcasts, interviews, live recordings, or video soundtracks for clearer, more professional edits.' },
       ]}
       faqs={[
-        { q: 'How does the vocal remover work?', a: 'An AI stem-separation model analyzes the song\u2019s spectrogram and estimates which parts belong to the voice versus everything else. It runs entirely in your browser — no audio is sent to any server.' },
-        { q: 'Is it really free?', a: 'Yes. There are no credits, watermarks or accounts. The AI models are open-source and run on your own device, which is why we can offer it free.' },
-        { q: 'What quality can I expect?', a: 'AI mode gives the cleanest separation, especially on professionally mixed songs. Very dense mixes or heavy effects can leave faint artifacts — that\u2019s normal for all stem separators.' },
-        { q: 'Which formats are supported?', a: 'MP3, WAV, M4A, OGG, FLAC and WEBM audio, plus audio extracted from MP4, MOV, AVI and other video files.' },
-        { q: 'Do I need to install anything?', a: 'No. It runs in Chrome, Edge, Safari or Firefox. The AI model (~80MB) downloads once on first use and is cached for offline use afterwards.' },
-        { q: 'Who owns the separated tracks?', a: 'You do — but only process audio you have the rights to. Removing vocals doesn\u2019t transfer any copyright.' },
+        { q: 'How does the AI vocal remover work?', a: 'Our vocal remover uses a neural stem-separation model trained on thousands of songs. When you upload a track, the AI converts the audio into a spectrogram — a visual map of frequencies over time — and predicts which parts belong to the human voice versus drums, bass, guitars, and other instruments. It then reconstructs two separate audio streams: one containing just the vocals, and one with everything else. The entire process runs in your web browser using WebAssembly, so no audio is ever sent to a server. This is the same class of technology used in professional studio software, made free and accessible to everyone.' },
+        { q: 'Is this vocal remover really 100% free?', a: 'Yes, completely free with no catches. There are no credits to buy, no watermarks on your downloads, no daily limits, and no account required. We can offer this because the AI models are open-source and all the heavy computation happens on your own device — we don\u2019t pay for server GPUs, so we don\u2019t need to charge you. The ~80MB AI model downloads once to your browser and is cached, so repeat visits are instant. If you find it useful, the best way to support us is to share it with a friend who makes music.' },
+        { q: 'What quality can I expect from vocal removal?', a: 'In AI mode, you can expect remarkably clean vocal isolation on most professionally mixed songs — the kind of quality that used to require expensive studio software. The model is particularly good at separating lead vocals from pop, rock, hip-hop, and electronic mixes. That said, no stem separator is perfect: very dense mixes, heavy reverb, layered backing vocals, or whispered passages can leave faint artifacts or bleed-through. This is true of every vocal remover on the market, including paid ones costing $20+/month. For the absolute best results, use high-quality source files (320kbps MP3 or WAV) rather than low-bitrate streams.' },
+        { q: 'Which audio and video formats are supported?', a: 'We support all common audio formats: MP3, WAV, M4A, OGG, FLAC, and WEBM. You can also upload video files — MP4, MOV, AVI, 3GP, and WEBM — and we\u2019ll automatically extract the audio track for separation. This makes it easy to remove vocals from music videos, live performance clips, or movie scenes. For best results, we recommend files up to 10 minutes long; longer files will show a warning because browser memory is limited. All processing happens at 44.1kHz, the standard for music production.' },
+        { q: 'Do I need to install anything or create an account?', a: 'No installation and no account needed. The vocal remover runs entirely in modern web browsers — Chrome, Edge, Safari, and Firefox, on Windows, Mac, Linux, Android, and iOS. On your first visit, the AI model (~80MB) downloads automatically and is cached by your browser, so subsequent separations start instantly and even work offline. Your files are processed locally using WebAssembly and the Web Audio API. Nothing is uploaded, nothing is stored on our servers, and there are no cookies tracking your audio.' },
+        { q: 'Can I use the separated vocals commercially?', a: 'The separated audio files are yours to download and keep — we place no restrictions on them. However, removing vocals from a song does not transfer or remove the original copyright. You should only process audio you have the rights to use, such as your own recordings, royalty-free music, or tracks where you\u2019ve obtained a license. Using isolated vocals from commercial songs in your own releases without permission could infringe copyright, just as sampling the original song would. When in doubt, consult a music licensing professional.' },
       ]}
     />
   );
