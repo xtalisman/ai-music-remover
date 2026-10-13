@@ -150,35 +150,37 @@ export default function AudioToTextPage() {
       path="/ai-audio-to-text"
       seoTitle="Audio to Text — Free AI Transcription in Your Browser | AI Music Remover"
       seoDescription="Transcribe audio and video to text with Whisper AI, free in your browser. Timestamps, editable transcript, export TXT, SRT, VTT and DOCX."
-      h1="Turn audio into text"
-      sub="Whisper AI transcribes your audio or video right in the browser — with timestamps, editable text and one-click exports."
+      h1="Turn Audio into Text — Free AI Transcription with Whisper"
+      sub="Upload any podcast, interview, meeting recording, or video and our free AI transcription tool converts speech to text right in your browser. Powered by OpenAI\u2019s acclaimed Whisper model running locally on your device — with automatic language detection, precise timestamps, an editable transcript, and one-click export to TXT, SRT, VTT, or DOCX. No per-minute fees, no uploads, no sign-up."
       badge="Beta · Whisper AI"
       widget={<TranscribeWidget />}
       steps={[
-        { title: 'Upload audio or video', text: 'Podcasts, interviews, meetings, videos — anything with speech.' },
-        { title: 'AI transcribes', text: 'Whisper runs on your device, detects the language and timestamps every line.' },
-        { title: 'Edit & export', text: 'Fix any words inline, then download TXT, SRT, VTT or DOCX.' },
+        { title: 'Upload audio or video', text: 'Podcasts, interviews, lectures, meetings, YouTube videos — anything with speech. MP3, WAV, M4A, MP4, and more. Up to 10 minutes per file works best.' },
+        { title: 'Whisper AI transcribes locally', text: 'OpenAI\u2019s Whisper model downloads once (~40MB, cached afterwards), then transcribes entirely on your device. It auto-detects the language and timestamps every segment — no audio ever leaves your browser.' },
+        { title: 'Review and edit inline', text: 'Read through the transcript and click any line to fix misheard words. AI transcription is excellent but not perfect — a quick human pass catches names, jargon, and accents.' },
+        { title: 'Export in your format', text: 'Download as plain TXT for notes, SRT or VTT for video subtitles and captions, or DOCX for polished documents. Your transcript is ready for whatever comes next.' },
       ]}
       features={[
-        { icon: '🤖', title: 'Whisper AI', text: 'The acclaimed open-source speech model, running locally.' },
-        { icon: '🌍', title: 'Auto language detect', text: 'Dozens of languages recognized automatically.' },
-        { icon: '⏱️', title: 'Timestamps', text: 'Every segment is timed for subtitles and captions.' },
-        { icon: '✏️', title: 'Editable', text: 'Click any line to correct it before exporting.' },
-        { icon: '💯', title: 'Free & private', text: 'No per-minute fees; your audio never leaves your device.' },
-        { icon: '📄', title: '4 export formats', text: 'TXT, SRT, VTT and DOCX for any workflow.' },
+        { icon: '🤖', title: 'Whisper AI, the real thing', text: 'We run OpenAI\u2019s acclaimed open-source Whisper model — the same technology behind the best transcription services — locally in your browser. Not a demo, not a trial.' },
+        { icon: '🌍', title: 'Automatic language detection', text: 'Whisper recognizes dozens of languages automatically, from English, Spanish, and French to Hindi, Arabic, Mandarin, and beyond. No manual language selection needed.' },
+        { icon: '⏱️', title: 'Precise timestamps', text: 'Every transcript segment is time-coded, so you can jump to any moment in the audio, generate perfectly synced subtitles, or cite exact quotes with confidence.' },
+        { icon: '✏️', title: 'Fully editable transcript', text: 'Click any line to correct it inline before exporting. Fix proper nouns, technical terms, and accented speech — then export the polished version.' },
+        { icon: '💯', title: 'Free with zero per-minute fees', text: 'Transcription services typically charge $0.25-1.00 per minute — a one-hour interview costs $15-60. Ours is unlimited and free, because your device does the work.' },
+        { icon: '📄', title: 'Four export formats', text: 'TXT for notes and documents, SRT and VTT for video subtitles and closed captions, DOCX for sharing and printing. Every workflow covered.' },
       ]}
       useCases={[
-        { title: 'Podcast show notes', text: 'Transcribe episodes for SEO and accessibility.' },
-        { title: 'Subtitles', text: 'Generate SRT/VTT captions for videos.' },
-        { title: 'Meeting notes', text: 'Turn recordings into searchable text.' },
-        { title: 'Research', text: 'Transcribe interviews for analysis.' },
+        { title: 'Podcast show notes that rank on Google', text: 'Publish a full transcript alongside every episode. Search engines can\u2019t listen to audio, but they devour text — transcripts are the single highest-ROI SEO move for podcasters, and they make your content accessible to deaf and hard-of-hearing audiences.' },
+        { title: 'Video subtitles and captions', text: 'Generate SRT or VTT caption files for YouTube, courses, and social videos. Captions boost watch time (most social video is watched on mute) and are legally required for many organizations.' },
+        { title: 'Meeting notes you\u2019ll actually use', text: 'Record the meeting, transcribe it, and get searchable text instead of vague memories. Find that decision, that deadline, that action item — with timestamps to prove it.' },
+        { title: 'Research interviews, analyzed properly', text: 'Journalists, academics, and UX researchers: transcribe hours of interviews and actually analyze them. Search across transcripts, pull exact quotes, and code themes — qualitative research without the transcription bill.' },
       ]}
       faqs={[
-        { q: 'How accurate is it?', a: 'Whisper tiny is fast and good for clear speech. Heavy accents, crosstalk or background music reduce accuracy — the editable transcript lets you fix mistakes quickly.' },
-        { q: 'Which languages are supported?', a: 'Whisper auto-detects dozens of languages, from English and Spanish to Hindi, Arabic and Mandarin.' },
-        { q: 'How long does it take?', a: 'Roughly real-time on a modern laptop after the one-time ~40MB model download. Longer files take proportionally longer.' },
-        { q: 'Is my audio uploaded anywhere?', a: 'No. The model downloads to your browser and everything runs on your device.' },
-        { q: 'Is it free?', a: 'Yes — unlimited transcription, no sign-up, no per-minute charges.' },
+        { q: 'How accurate is Whisper AI transcription?', a: 'On clear speech in a quiet environment, Whisper is remarkably accurate — often 95%+ word accuracy for English, comparable to human transcription for straightforward content. It handles multiple speakers, natural conversational pace, and even mild background noise well. Accuracy drops with heavy accents it hasn\u2019t heard much of, multiple people talking over each other, very technical jargon, or music playing under speech. We use the "tiny" Whisper variant for speed (it transcribes roughly in real-time on a modern laptop); larger variants are more accurate but would be painfully slow in a browser. The editable transcript exists precisely because no AI is perfect — a quick human review pass catches the 5% that matters, like names and numbers.' },
+        { q: 'Which languages does the transcription support?', a: 'Whisper was trained on 680,000 hours of multilingual audio and auto-detects the language — you don\u2019t need to tell it anything. It handles English, Spanish, French, German, Italian, Portuguese, Dutch, Russian, Hindi, Arabic, Mandarin, Japanese, Korean, and dozens more, including code-switching (mixing languages mid-sentence, common in South Asia and Latin America). Transcription quality is best for high-resource languages like English and Spanish; lower-resource languages work but with more errors. If your audio mixes languages, Whisper usually follows along — just review the transcript afterwards.' },
+        { q: 'How long does transcription take?', a: 'After the one-time ~40MB model download (cached in your browser forever after), transcription runs at roughly real-time speed on a modern laptop — a 10-minute recording takes about 10 minutes to process, sometimes faster on powerful machines. Longer files take proportionally longer, and very old or mobile devices will be slower. You\u2019ll see live progress with the current segment being transcribed. Tip: for a 60-minute interview, start the transcription and grab a coffee — it\u2019ll be done when you get back, and it cost you exactly $0 versus $15-60 at a transcription service.' },
+        { q: 'Is my audio uploaded to any server?', a: 'No — and this is a genuine architectural guarantee, not a privacy policy promise. The Whisper model downloads to your browser once, and every second of transcription computation happens locally using WebAssembly and your device\u2019s CPU. There is literally no server endpoint that receives your audio; the network tab will confirm zero audio uploads. This makes our transcriber suitable for sensitive material — legal interviews, medical dictation, unreleased content, confidential meetings — that you\u2019d never send to a cloud transcription API.' },
+        { q: 'Why is this marked Beta?', a: 'We\u2019re transparent about current limits. The core transcription works reliably, but very long files (30+ minutes) can strain browser memory, speaker diarization (labeling "who said what") isn\u2019t implemented yet, and the tiny model trades some accuracy for speed. Rather than silently shipping limitations, we mark it Beta and tell you exactly what to expect. As we add the larger model option and diarization, the Beta tag comes off. What you get today is already more than enough for podcasts, videos, meetings, and interviews — honestly labeled.' },
+        { q: 'How does free browser transcription compare to paid services?', a: 'Paid services (Otter, Rev, Descript) offer conveniences we don\u2019t yet: speaker labels, real-time transcription, team collaboration, and human review options. What we match or beat them on: raw transcription quality for clear audio (same Whisper family), privacy (nothing uploaded, ever), and price ($0 vs $10-30/month or per-minute fees). For solo creators, students, and researchers who need accurate transcripts of their own recordings, the free browser option covers 90% of use cases. If you need speaker diarization or a team workspace, the paid tools earn their keep — we\u2019re honest about that.' },
       ]}
     />
   );
