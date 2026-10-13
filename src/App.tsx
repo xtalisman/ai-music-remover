@@ -24,6 +24,8 @@ const HistoryPage = lazy(() => import('./pages/HistoryPage'));
 const BlogPost1 = lazy(() => import('./pages/blog/Post1'));
 const BlogPost2 = lazy(() => import('./pages/blog/Post2'));
 const BlogPost3 = lazy(() => import('./pages/blog/Post3'));
+const BlogPost4 = lazy(() => import('./pages/blog/Post4'));
+const BlogPost5 = lazy(() => import('./pages/blog/Post5'));
 
 function PageLoader() {
   return (
@@ -55,6 +57,8 @@ export default function App() {
             <Route path="/blog/how-ai-stem-separation-works" element={<BlogPost1 />} />
             <Route path="/blog/make-karaoke-track-at-home" element={<BlogPost2 />} />
             <Route path="/blog/clean-noisy-recordings" element={<BlogPost3 />} />
+            <Route path="/blog/best-free-vocal-remover-tools-compared-2026" element={<BlogPost4 />} />
+            <Route path="/blog/clean-up-podcast-audio-complete-guide" element={<BlogPost5 />} />
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/terms" element={<TermsPage />} />
