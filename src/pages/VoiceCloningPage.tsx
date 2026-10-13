@@ -83,34 +83,36 @@ export default function VoiceCloningPage() {
       path="/voice-cloning"
       seoTitle="Voice Cloning — Coming Soon | AI Music Remover"
       seoDescription="Ethical, consent-based AI voice cloning is coming to AI Music Remover. Join the waitlist for early access."
-      h1="Voice cloning is coming"
-      sub="Type anything and hear it in a cloned voice — built ethically, with consent at the core."
+      h1="Ethical AI Voice Cloning — Coming Soon"
+      sub="Type anything and hear it spoken in a cloned voice — built from the ground up with consent, transparency, and safety at its core. We\u2019re taking the time to do this right: verified consent for every voice, inaudible watermarking on every output, and a strict no-impersonation policy. Join the waitlist for early access."
       badge="Beta / Coming soon"
       widget={<WaitlistWidget />}
       steps={[
-        { title: 'Join the waitlist', text: 'Leave your email above for early access.' },
-        { title: 'Record with consent', text: 'At launch, you\u2019ll provide a short voice sample you own the rights to.' },
-        { title: 'Type & generate', text: 'Type any text and hear it spoken in the cloned voice — on your device.' },
+        { title: 'Join the waitlist', text: 'Leave your email above. We\u2019ll notify you the moment voice cloning launches — early supporters get extended free-tier access.' },
+        { title: 'Verify with consent', text: 'At launch, you\u2019ll record a short voice sample and complete a consent verification proving you own the voice or have the owner\u2019s explicit written permission.' },
+        { title: 'Type and generate', text: 'Type any text and hear it spoken in the cloned voice — with natural prosody and emotion, processed on your device. Every output carries an inaudible watermark identifying it as AI-generated.' },
       ]}
       features={[
-        { icon: '🛡️', title: 'Consent-first', text: 'Explicit consent flows and verification before any voice can be cloned.' },
-        { icon: '🔒', title: 'On-device', text: 'Like all our tools, voice data never leaves your browser.' },
-        { icon: '💯', title: 'Free tier', text: 'Generous free cloning at launch.' },
-        { icon: '⚖️', title: 'Ethics by design', text: 'Watermarked outputs and a strict no-impersonation policy.' },
-        { icon: '🎙️', title: 'Natural quality', text: 'We\u2019re targeting near-human prosody and emotion.' },
-        { icon: '🌍', title: 'Multiple languages', text: 'Planned language support from day one.' },
+        { icon: '🛡️', title: 'Consent-first architecture', text: 'No voice can be cloned without verified proof of ownership or the voice owner\u2019s explicit permission. This isn\u2019t a checkbox — it\u2019s a verification flow.' },
+        { icon: '🔒', title: 'On-device voice data', text: 'Like every tool on this site, your voice samples never leave your browser. There\u2019s no voiceprint database to breach, sell, or subpoena.' },
+        { icon: '💯', title: 'Generous free tier', text: 'We believe creative tools should be accessible. Expect a genuinely useful free tier at launch — not a 30-second teaser designed to upsell you.' },
+        { icon: '⚖️', title: 'Ethics by design, not PR', text: 'Inaudible watermarking on all outputs, a strict no-impersonation policy with active enforcement, and no cloning of public figures, period.' },
+        { icon: '🎙️', title: 'Natural, expressive quality', text: 'We\u2019re targeting near-human prosody — the rhythm, emphasis, and emotion that make speech sound alive, not robotic. Worth the wait.' },
+        { icon: '🌍', title: 'Multiple languages planned', text: 'Voice cloning shouldn\u2019t be English-only. We\u2019re building multilingual support from day one, so creators worldwide can use their own voice.' },
       ]}
       useCases={[
-        { title: 'Content creators', text: 'Voice-overs in your own voice without re-recording.' },
-        { title: 'Accessibility', text: 'Give a voice back to those who\u2019ve lost theirs.' },
-        { title: 'Indie games & film', text: 'Affordable character voices for small teams.' },
-        { title: 'Podcasts', text: 'Fix flubbed lines without booking studio time.' },
+        { title: 'Content creators', text: 'Record voice-overs in your own voice without re-recording every take. Fix a flubbed line, update outdated information, or localize content — all in the voice your audience knows.' },
+        { title: 'Accessibility that matters', text: 'For people losing their voice to illness, voice banking preserves the ability to speak in their own voice. This is the use case that motivates us most.' },
+        { title: 'Indie games and film', text: 'Small teams can\u2019t afford $500/hour voice actors for every line of dialogue. Ethical voice cloning makes professional-quality character voices accessible to indie creators.' },
+        { title: 'Podcast pickups without studio time', text: 'Misspoke a name in episode 47? Instead of booking studio time to re-record one line, generate a seamless pickup in your own cloned voice.' },
       ]}
       faqs={[
-        { q: 'When does voice cloning launch?', a: 'We\u2019re in active development. Join the waitlist and we\u2019ll email you the moment it\u2019s ready.' },
-        { q: 'Will it be free?', a: 'There will be a generous free tier. Details at launch.' },
-        { q: 'Can I clone a celebrity\u2019s voice?', a: 'No. Our consent system requires proof you own the rights to the voice or have the owner\u2019s explicit permission.' },
-        { q: 'Where is my voice data stored?', a: 'On your device only — like every tool on this site.' },
+        { q: 'When does voice cloning actually launch?', a: 'We\u2019re in active development, and we\u2019d rather ship it right than ship it fast. Voice cloning done wrong enables fraud, misinformation, and non-consensual impersonation — the stakes demand careful engineering of the consent, watermarking, and abuse-prevention systems, not just the voice model itself. Join the waitlist and we\u2019ll email you the moment it\u2019s ready. Early supporters will get extended free-tier access as a thank-you for your patience.' },
+        { q: 'Will voice cloning be free?', a: 'Yes — there will be a genuinely generous free tier, consistent with everything else on this site. We\u2019re not building a 30-second demo designed to upsell you to a $30/month plan. The exact limits (minutes per month, number of voices) will be announced at launch, but the philosophy is the same as our other tools: the AI runs on your device, so our costs are low and we pass those savings to you. If you need heavy commercial usage, there may be a paid tier — but the free tier will be useful on its own, not a teaser.' },
+        { q: 'Can I clone a celebrity\u2019s voice, or someone else\u2019s?', a: 'No — and this is non-negotiable. Our consent system requires verified proof that you own the voice (it\u2019s you) or have the voice owner\u2019s explicit written permission. There\u2019s no "I promise it\u2019s fine" checkbox; it\u2019s a real verification flow. Cloning public figures, private individuals, or anyone else without their knowledge and consent is impersonation, which can constitute fraud, defamation, or worse depending on jurisdiction. We actively enforce this policy, watermark all outputs as AI-generated, and will never offer celebrity voice cloning. If you want a famous-sounding voice, hire a voice actor who does impressions — that\u2019s a human creative skill worth paying for.' },
+        { q: 'Where is my voice data stored, and who can access it?', a: 'On your device only — like every tool on this site. Your voice samples are processed locally in your browser using on-device AI models. There is no voiceprint database on our servers, which means there\u2019s nothing to breach, nothing to sell, and nothing to hand over. This is a deliberate architectural choice: we believe biometric data like voiceprints should never leave your possession. Even we — the site operators — cannot access your voice data, because we never receive it.' },
+        { q: 'How will you prevent misuse for fraud and misinformation?', a: 'Through multiple layers: (1) Verified consent before any voice can be cloned, (2) inaudible watermarking embedded in every generated output identifying it as AI-created, (3) a strict no-impersonation policy with active monitoring and enforcement, (4) no cloning of public figures under any circumstances, and (5) rate limits and abuse detection on the generation API. We\u2019re also following emerging industry standards for synthetic media disclosure. No system is perfect, but we\u2019re building the most responsible voice cloning tool we can — and if we can\u2019t do it safely, we won\u2019t ship it.' },
+        { q: 'How is this different from the voice effects in your Voice Changer?', a: 'Completely different technology. The Voice Changer applies real-time DSP effects (pitch shifting, robot modulation, reverb) to transform the character of your existing voice — it can\u2019t make you sound like a specific other person. Voice cloning uses AI trained on samples of a target voice to generate entirely new speech in that voice\u2019s likeness, timbre, and speaking style. The Voice Changer is available now and great for fun effects and creative projects. Voice cloning is the more powerful (and more sensitive) technology that we\u2019re building carefully with the safeguards described above.' },
       ]}
     />
   );
