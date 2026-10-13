@@ -242,12 +242,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const unsub = adapter.onAuthStateChanged((u) => {
       setUser(u);
       setLoading(false);
-      if (u && pendingAction.current) {
-        const run = pendingAction.current;
-        pendingAction.current = null;
+      if (u) {
+        // Close the modal on any successful sign-in/sign-up, not just
+        // when there's a pending action (fixes stuck "Please wait…" button).
         setModalOpen(false);
-        // Run after state settles so the gated UI sees the signed-in user.
-        setTimeout(run, 0);
+        if (pendingAction.current) {
+          const run = pendingAction.current;
+          pendingAction.current = null;
+          // Run after state settles so the gated UI sees the signed-in user.
+          setTimeout(run, 0);
+        }
       }
     });
     return unsub;

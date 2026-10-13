@@ -99,11 +99,58 @@ export async function ensureSeparationModels(
     );
     throwIfAborted(signal);
     onProgress((i + 0.95) / need.length * 0.7, `Loading ${stem} model…`);
-    const session = await ort.InferenceSession.create(buf, { executionProviders: ['wasm'] });
+    // Session creation can hang on some devices/browsers (WASM init issues).
+    // Add a 3-minute timeout with a clear error message instead of hanging forever.
+    const session = await createSessionWithTimeout(buf, signal, stem);
     sessions.set(stem, session);
     onProgress((i + 1) / need.length * 0.7, `Loading ${stem} model…`);
   }
   onProgress(0.7, 'Models ready');
+}
+
+/**
+ * Create an ONNX inference session with a timeout.
+ * Without this, a WASM initialization hang leaves the UI stuck forever
+ * with no error message.
+ */
+async function createSessionWithTimeout(
+  buf: ArrayBuffer,
+  signal: AbortSignal,
+  stem: StemName,
+): Promise<ort.InferenceSession> {
+  const TIMEOUT_MS = 180_000; // 3 minutes per model
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => {
+      reject(new Error(
+        `AI model failed to load (${stem}). This usually means your browser ` +
+        `couldn't initialize the AI engine. Try: 1) Use Chrome or Edge on desktop, ` +
+        `2) Close other tabs to free memory, 3) Try the "Instant" mode instead.`
+      ));
+    }, TIMEOUT_MS);
+
+    const cleanup = () => clearTimeout(timer);
+    const onAbort = () => {
+      cleanup();
+      reject(new DOMException('aborted', 'AbortError'));
+    };
+    if (signal.aborted) {
+      onAbort();
+      return;
+    }
+    signal.addEventListener('abort', onAbort, { once: true });
+
+    ort.InferenceSession.create(buf, { executionProviders: ['wasm'] })
+      .then((session) => {
+        cleanup();
+        signal.removeEventListener('abort', onAbort);
+        resolve(session);
+      })
+      .catch((err) => {
+        cleanup();
+        signal.removeEventListener('abort', onAbort);
+        reject(err instanceof Error ? err : new Error(String(err)));
+      });
+  });
 }
 
 /**
