@@ -101,11 +101,13 @@ function MashupWidget() {
   };
 
   const handleFile = async (file: File) => {
-    setError('');
-    setPhase('working');
-    try {
-      setStatus(`Separating track ${slot}…`);
-      const track = await processTrack(file);
+    // Gate the AI processing (not the file selection) behind sign-in.
+    requireAuth(async () => {
+      setError('');
+      setPhase('working');
+      try {
+        setStatus(`Separating track ${slot}…`);
+        const track = await processTrack(file);
       setProgress(0.5);
       setStatus('Analyzing tempo & key…');
       const a = slot === 'A' ? track : trackA;
@@ -118,6 +120,7 @@ function MashupWidget() {
       setError(`Failed: ${(e as Error).message}`);
       setPhase('error');
     }
+    });
   };
 
   const buildMix = async () => {
@@ -199,7 +202,7 @@ function MashupWidget() {
               ✓ Track A: {trackA.fileName} ({trackA.bpm || '?'} BPM, {trackA.key})
             </p>
           )}
-          <UploadWidget key={slot} onFile={(f) => requireAuth(() => handleFile(f))} compact />
+          <UploadWidget key={slot} onFile={handleFile} compact />
           {trackA && (
             <div className="text-center mt-3">
               <button onClick={() => { setTrackA(null); setSlot('A'); }} className="text-sm text-muted underline">Replace track A</button>
