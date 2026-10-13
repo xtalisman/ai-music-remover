@@ -192,35 +192,37 @@ export default function AudioTranslatorPage() {
       path="/ai-audio-translator"
       seoTitle="Audio Translator — Transcribe & Translate Audio Free | AI Music Remover"
       seoDescription="Transcribe audio with Whisper AI and translate it in your browser. 10 language pairs, translated subtitles, spoken translation. Free."
-      h1="Translate your audio"
-      sub="Whisper transcribes, AI translates — 10 language pairs, right in your browser, free."
+      h1="Translate Audio to Another Language — Free AI Audio Translator"
+      sub="Upload a podcast, interview, video, or voice message and our free AI audio translator transcribes the speech with Whisper, then translates every line into your target language — 10 language pairs including English, Spanish, French, German, Italian, and Chinese. Download translated subtitles, read the side-by-side transcript, or hear the translation spoken aloud. All in your browser, all private, all free."
       badge="Beta · AI Translator"
       widget={<TranslatorWidget />}
       steps={[
-        { title: 'Upload & pick a direction', text: 'Choose from 10 supported language pairs, then upload your audio or video.' },
-        { title: 'Transcribe + translate', text: 'Whisper transcribes the speech, then a translation model converts every line.' },
-        { title: 'Export or listen', text: 'Download translated subtitles, or hear the translation spoken aloud.' },
+        { title: 'Choose your language pair', text: 'Pick from 10 supported directions — English to Spanish, French, German, Italian, or Chinese, and back. The translation models download once (~100MB per pair) and are cached for offline use.' },
+        { title: 'Upload your audio or video', text: 'Podcasts, interviews, lectures, YouTube videos, voice messages — anything with speech. Up to 10 minutes per file for the smoothest experience.' },
+        { title: 'AI transcribes, then translates', text: 'Whisper first converts speech to text in the original language (with timestamps), then the Opus-MT translation model converts every line — all on your device, no audio ever uploaded.' },
+        { title: 'Read, listen, or export', text: 'Compare original and translated transcripts side by side, hear the translation spoken in the target language, or download translated SRT subtitles and TXT files.' },
       ]}
       features={[
-        { icon: '🌍', title: '10 language pairs', text: 'English ↔ Spanish, French, German, Italian and Chinese.' },
-        { icon: '🤖', title: 'Two AI models', text: 'Whisper for speech, Opus-MT for translation — both on-device.' },
-        { icon: '🔊', title: 'Spoken translation', text: 'Hear the result using your device\u2019s voices for that language.' },
-        { icon: '📄', title: 'Subtitle export', text: 'Translated SRT and TXT with original timestamps.' },
-        { icon: '💯', title: 'Free & private', text: 'No APIs, no uploads, no per-word fees.' },
-        { icon: '⚡', title: 'Cached models', text: 'Each model downloads once, then works offline.' },
+        { icon: '🌍', title: '10 language pairs', text: 'English ↔ Spanish, French, German, Italian, and Chinese — covering the languages spoken by billions of people. More pairs are on the roadmap.' },
+        { icon: '🤖', title: 'Two AI models, zero servers', text: 'Whisper handles speech recognition, Opus-MT (the Helsinki-NLP open translation models) handles translation. Both run locally via WebAssembly — no API keys, no per-word fees.' },
+        { icon: '🔊', title: 'Hear the spoken translation', text: 'Listen to the translated text read aloud using your device\u2019s built-in voices for the target language. Perfect for checking how your content sounds to the new audience.' },
+        { icon: '📄', title: 'Translated subtitle export', text: 'Download SRT files with the original timestamps but translated text — drop them straight into YouTube, Premiere, or any video platform for instant multilingual captions.' },
+        { icon: '💯', title: 'Free with no per-word charges', text: 'Translation APIs charge per character — translating a one-hour podcast can cost $10-20. Ours is unlimited and free because your device does all the work.' },
+        { icon: '🔒', title: 'Private by architecture', text: 'Sensitive interviews, confidential meetings, unreleased content — none of it ever leaves your browser. There\u2019s no server to intercept, subpoena, or breach.' },
       ]}
       useCases={[
-        { title: 'Video localization', text: 'Translate interviews and tutorials for new audiences.' },
-        { title: 'Subtitles', text: 'Generate translated SRTs for YouTube and courses.' },
-        { title: 'Language learning', text: 'Compare original and translated transcripts side by side.' },
-        { title: 'Global teams', text: 'Make voice messages and meetings understandable.' },
+        { title: 'Localize videos for global audiences', text: 'YouTubers and course creators: translate your English tutorials into Spanish, French, or Chinese and 10x your potential audience. Upload once, get translated subtitles ready for YouTube\u2019s multi-language audio tracks.' },
+        { title: 'Make content accessible across languages', text: 'NGOs, educators, and companies: ensure your message reaches everyone, regardless of language. Translate training videos, announcements, and explainers without hiring a translation agency.' },
+        { title: 'Learn languages with real content', text: 'Students: compare the original and translated transcripts side by side to see how natives actually phrase things. It\u2019s like having a bilingual friend explain every line of your favorite podcast.' },
+        { title: 'Understand global teams and clients', text: 'Received a voice message in German? An interview in Mandarin? Translate it in seconds and actually understand what was said — no more guessing from auto-generated gibberish captions.' },
       ]}
       faqs={[
-        { q: 'Which languages are supported?', a: 'English ↔ Spanish, French, German, Italian and Chinese — 10 pairs total. We show the full list above the upload box, and more pairs are coming.' },
-        { q: 'How good is the translation?', a: 'Opus-MT models are solid for everyday speech. Idioms and slang can be imperfect — review important translations.' },
-        { q: 'Does the spoken translation sound natural?', a: 'It uses your device\u2019s built-in voices for the target language, so quality varies by device.' },
-        { q: 'Is it free?', a: 'Yes — unlimited, no sign-up.' },
-        { q: 'Is my audio private?', a: 'Completely. Both AI models run in your browser; nothing is uploaded.' },
+        { q: 'Which languages can I translate between?', a: 'We currently support 10 language pairs: English → Spanish, French, German, Italian, and Chinese, plus the reverse (Spanish → English, French → English, German → English, Italian → English, Chinese → English). These cover the most requested combinations — the languages of the largest YouTube, podcast, and business audiences. Each direction uses a dedicated Opus-MT translation model (developed by the University of Helsinki\u2019s language technology group) that downloads once (~100MB) and is cached in your browser. We\u2019re actively working on adding Portuguese, Japanese, Korean, Hindi, and Arabic pairs — the models exist, we\u2019re optimizing them for browser delivery.' },
+        { q: 'How accurate is the AI translation?', a: 'The pipeline has two stages, each with its own accuracy profile. Stage one (Whisper transcription) is excellent on clear speech — 95%+ for English. Stage two (Opus-MT translation) produces solid, natural translations for everyday speech, news-style content, and straightforward narration. It handles grammar and common expressions well. Where it struggles: idioms ("it\u2019s raining cats and dogs" won\u2019t translate literally well), slang, wordplay, cultural references, and highly technical jargon. For casual content and getting the gist, it\u2019s excellent. For legal, medical, or publish-ready literary translation, always have a native speaker review. Think of it as a very capable assistant, not a certified translator.' },
+        { q: 'How does the spoken translation feature work?', a: 'After translation, you can hear the translated text read aloud using your device\u2019s built-in text-to-speech voices for the target language (via the Web Speech API). So an English-to-Spanish translation will be spoken by your device\u2019s Spanish voice. Quality varies by device — Apple and Microsoft\u2019s neural voices sound remarkably natural, while older system voices can sound robotic. This is great for checking how your translated content flows when spoken, for accessibility, or for language learners practicing pronunciation. It\u2019s not a voice clone of the original speaker — it\u2019s the translation read by a synthetic voice.' },
+        { q: 'Why do the translation models take a while to download?', a: 'Each language pair needs its own translation model (~100MB), plus the Whisper transcription model (~40MB). That\u2019s the price of running real AI locally instead of calling a cloud API. The good news: it\u2019s a one-time download per language pair, cached permanently in your browser. After that, translations start instantly and work completely offline — on a plane, in a basement studio, anywhere. Compare that to API-based translators that need internet forever and charge per character. The 2-minute download today saves you money and works offline forever.' },
+        { q: 'Is my audio really private? How can translation work without servers?', a: 'Yes — genuinely private, by architecture rather than by promise. Both AI models (Whisper for transcription, Opus-MT for translation) are downloaded to your browser and execute locally using WebAssembly. Your audio is decoded, transcribed, and translated entirely on your device\u2019s CPU. There is no API endpoint that receives your audio or text — you can verify this in your browser\u2019s network tab. This is fundamentally different from Google Translate or cloud transcription services, where your content is sent to corporate servers. For journalists, lawyers, researchers, and anyone handling sensitive multilingual content, this privacy guarantee matters.' },
+        { q: 'What\u2019s the difference between this and Google Translate\u2019s audio feature?', a: 'Google Translate is excellent and we won\u2019t pretend otherwise — it supports 130+ languages (we have 10 pairs), has better handling of rare languages, and benefits from Google\u2019s massive training data. Where we win: privacy (Google processes your audio on their servers; we never upload anything), cost at scale (Google\u2019s API charges per character beyond free tiers; we\u2019re unlimited), offline capability (we work without internet after the one-time download), and subtitle export with original timestamps (purpose-built for creators). For quick casual translations of short phrases, Google is convenient. For private, unlimited, subtitle-ready translation of your own audio content, our tool is the better choice.' },
       ]}
     />
   );
