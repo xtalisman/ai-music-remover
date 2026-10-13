@@ -163,35 +163,37 @@ export default function KaraokeMakerPage() {
       path="/karaoke-maker"
       seoTitle="Karaoke Maker — Remove Vocals & Change Key/Tempo Free | AI Music Remover"
       seoDescription="Turn any song into a karaoke track: AI removes the vocals, then adjust key and tempo. Download MP3 free in your browser."
-      h1="Turn any song into a karaoke track"
-      sub="AI removes the vocals, you set the key and tempo. Free karaoke tracks in your browser."
+      h1="Turn Any Song into a Karaoke Track — Free AI Karaoke Maker"
+      sub="Upload any song and our free AI karaoke maker removes the vocals, leaving a clean instrumental backing track. Then shift the key up or down to match your voice and adjust the tempo for practice. Download your karaoke track as MP3 or WAV — right in your browser, no sign-up, no cost."
       badge="AI Karaoke Maker"
       widget={<KaraokeWidget />}
       steps={[
-        { title: 'Upload a song', text: 'Any track in MP3, WAV or M4A — the AI strips the vocals out.' },
-        { title: 'Set your key & tempo', text: 'Shift the pitch up or down and adjust the speed to suit your voice.' },
-        { title: 'Download & sing', text: 'Export your karaoke track as MP3 or WAV and perform.' },
+        { title: 'Upload any song', text: 'Drop in an MP3, WAV, or M4A — our AI analyzes the mix and strips out the lead vocals, leaving the full instrumental behind.' },
+        { title: 'Set your key and tempo', text: 'Shift the pitch up or down by semitones to match your vocal range, and slow down tricky passages for practice — pitch and tempo adjust independently.' },
+        { title: 'Preview your backing track', text: 'Listen to the instrumental with your adjustments applied. Tweak the key and speed until it feels perfect for your voice.' },
+        { title: 'Download and perform', text: 'Export your finished karaoke track as MP3 for sharing or WAV for the best quality. Take it to karaoke night, the studio, or the stage.' },
       ]}
       features={[
-        { icon: '🎤', title: 'Clean vocal removal', text: 'AI stem separation isolates the instrumental — better than center-channel tricks.' },
-        { icon: '🎹', title: 'Key change', text: 'Shift ±6 semitones to match your vocal range without changing tempo.' },
-        { icon: '⏱️', title: 'Tempo control', text: 'Slow it down to practice or speed it up — pitch stays put.' },
-        { icon: '💯', title: 'Free forever', text: 'Unlimited karaoke tracks, no accounts, no watermarks.' },
-        { icon: '🔒', title: 'Private', text: 'Your songs never leave your device.' },
-        { icon: '🎵', title: 'MP3 & WAV export', text: 'MP3 for sharing, WAV for the best quality.' },
+        { icon: '🎤', title: 'True AI vocal removal', text: 'A trained neural network isolates and removes the lead vocal — dramatically cleaner than old center-channel cancellation tricks that also gut the bass and drums.' },
+        { icon: '🎹', title: 'Key change ±6 semitones', text: 'Shift the entire track up or down to sit in your comfortable singing range. The phase-vocoder keeps the tempo locked while the pitch moves.' },
+        { icon: '⏱️', title: 'Independent tempo control', text: 'Slow a fast song down to learn it, or speed up a ballad — the pitch stays exactly where you set it. Perfect for practice and performance prep.' },
+        { icon: '💯', title: 'Free with no limits', text: 'Make as many karaoke tracks as you want. No credits, no watermarks, no accounts, no "premium" key-change locked behind a paywall.' },
+        { icon: '🔒', title: 'Private by design', text: 'Your songs are processed entirely in your browser. They\u2019re never uploaded to a server, so your music library stays yours.' },
+        { icon: '🎵', title: 'MP3 and WAV export', text: 'Download MP3 for easy sharing and phone playback, or WAV for maximum quality when you\u2019re performing through a real PA system.' },
       ]}
       useCases={[
-        { title: 'Karaoke night', text: 'Make sing-along versions of songs that have no official karaoke release.' },
-        { title: 'Vocal practice', text: 'Slow tricky passages down and shift the key until it sits comfortably.' },
-        { title: 'Performances', text: 'Build a set of backing tracks in the right keys for your gig.' },
-        { title: 'Content creation', text: 'Create instrumental beds for covers, reaction videos and tutorials.' },
+        { title: 'Karaoke night, your way', text: 'Make sing-along versions of songs that never got an official karaoke release — obscure B-sides, new releases, or your own originals. Be the hero of karaoke night.' },
+        { title: 'Vocal practice that adapts to you', text: 'Shift a song down two semitones so it sits in your range, then slow the chorus to 80% speed while you learn the runs. Gradually bring it back up to full speed as you improve.' },
+        { title: 'Build your gig setlist', text: 'Singers and bands: create a full set of backing tracks, each in the right key for your voice, ready to play through the PA. No more awkward on-stage transposing.' },
+        { title: 'Content for covers and tutorials', text: 'YouTubers and vocal coaches: generate clean instrumental beds for cover videos, reaction content, and singing tutorials without hunting for licensed karaoke versions.' },
       ]}
       faqs={[
-        { q: 'How do I change the key without affecting tempo?', a: 'Our pitch shifter uses a phase-vocoder: it stretches the audio and resamples it so the pitch moves but the duration stays the same.' },
-        { q: 'Will it remove backing vocals too?', a: 'The AI targets the lead vocal. Quiet backing vocals or harmonies may partly remain — they\u2019re often mixed like instruments.' },
-        { q: 'Can I get synced lyrics?', a: 'Automatic lyrics display is coming with our AI transcription update. For now, download the track and sing along with any lyrics site.' },
-        { q: 'Is it free?', a: 'Yes — unlimited karaoke tracks, no sign-up, no watermark.' },
-        { q: 'What about copyright?', a: 'Only process songs you have the rights to use. A karaoke version doesn\u2019t grant performance or distribution rights.' },
+        { q: 'How does the AI karaoke maker remove vocals?', a: 'Our karaoke maker uses the same neural stem-separation technology as our vocal remover: a trained AI model analyzes your song\u2019s spectrogram and separates the lead vocal from everything else — drums, bass, guitars, keyboards, and backing instruments. Unlike old-fashioned "vocal remover" effects that simply delete the center channel (which also removes the kick drum, bass, and anything else panned center), the AI understands what a human voice sounds like and removes just that. The result is a full, rich instrumental that sounds like a real backing track, not a hollowed-out MP3. The AI model runs entirely in your browser, so your music never leaves your device.' },
+        { q: 'How do I change the key of a song without changing its speed?', a: 'After the vocals are removed, use the key control to shift the pitch up or down in semitones (half-steps). Our pitch shifter uses a phase-vocoder algorithm: it analyzes the audio in tiny overlapping windows, shifts each window\u2019s frequencies, and reassembles them — so a +2 semitone shift makes everything sound two half-steps higher while the song stays exactly the same length. This is the same principle behind professional tools like Ableton\u2019s Complex Pro mode. You can shift up to 6 semitones in either direction, which covers the difference between most vocal ranges.' },
+        { q: 'Will backing vocals and harmonies also be removed?', a: 'The AI primarily targets the lead vocal — the main singing voice. Quiet backing vocals, harmonies, and ad-libs are often mixed with heavy effects and panned wide like instruments, so the model may treat them as part of the instrumental and leave them in. In practice, this is usually fine for karaoke: faint background harmonies actually make the track sound fuller, like a real karaoke disc. If you want absolutely everything vocal removed, try our 4-stem Audio Splitter and mute the vocals stem entirely — though heavily effected backing vocals can still leave traces.' },
+        { q: 'Can I slow down a song to practice without changing the pitch?', a: 'Yes — tempo and pitch are fully independent. The tempo control uses time-stretching to make the song play slower or faster while keeping the pitch exactly where it is. Slow a lightning-fast chorus to 70% speed to learn every note, then gradually work back up to 100%. Or speed up a slow ballad for an energetic performance. The time-stretching preserves the natural character of the instruments, so it doesn\u2019t sound like a chipmunk tape — just the same song at a different speed.' },
+        { q: 'Is the karaoke maker really free? What\u2019s the catch?', a: 'There\u2019s no catch. It\u2019s free because all the processing — the AI vocal removal, the pitch shifting, the time stretching — happens on your device using your computer\u2019s processor. We don\u2019t run expensive servers, so we don\u2019t need to charge you or show you ads. No accounts, no watermarks on your downloads, no limit on how many karaoke tracks you make. The AI model downloads once (~80MB) and is cached in your browser for future visits.' },
+        { q: 'Can I use these karaoke tracks for public performance or YouTube?', a: 'Technically you can download and play them anywhere, but the legal side matters: creating a karaoke version of a song does not give you performance, distribution, or synchronization rights. Singing it at a private party is generally fine. Posting a cover video to YouTube usually works because YouTube has licensing deals with most publishers (they may place ads or share revenue with the rights holder). Performing it at a paid venue typically requires the venue to hold a performance license (most do). When in doubt — especially for commercial releases — consult a music licensing professional. And as always, only process songs you have the right to use.' },
       ]}
     />
   );
