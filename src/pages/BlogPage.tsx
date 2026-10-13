@@ -38,6 +38,24 @@ export const BLOG_POSTS: PostMeta[] = [
     readTime: '7 min',
     tag: 'Guides',
   },
+  {
+    slug: 'best-free-vocal-remover-tools-compared-2026',
+    title: 'Best Free Vocal Remover Tools Compared (2026)',
+    excerpt:
+      'We tested the top free vocal removers on quality, privacy, and limits — browser AI, desktop apps, and mobile. Here\u2019s what\u2019s actually worth your time.',
+    date: 'October 13, 2026',
+    readTime: '11 min',
+    tag: 'Comparisons',
+  },
+  {
+    slug: 'clean-up-podcast-audio-complete-guide',
+    title: 'How to Clean Up Podcast Audio: A Complete Guide',
+    excerpt:
+      'From mic technique to noise reduction to loudness — the full workflow for professional-sounding podcasts, even in an untreated room.',
+    date: 'October 13, 2026',
+    readTime: '12 min',
+    tag: 'Guides',
+  },
 ];
 
 export default function BlogPage() {
