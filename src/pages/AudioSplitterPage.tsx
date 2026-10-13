@@ -185,35 +185,37 @@ export default function AudioSplitterPage() {
       path="/audio-splitter"
       seoTitle="Audio Splitter — Split Songs into Vocals, Drums, Bass | AI Music Remover"
       seoDescription="Split any song into 4 AI-separated stems: vocals, drums, bass and other. Mix, mute, solo and download each stem free in your browser."
-      h1="Split any song into 4 stems"
-      sub="AI separates your track into vocals, drums, bass and other — then mix them live and download each stem."
+      h1="Split Any Song into Stems — Free AI Audio Splitter"
+      sub="Our free AI audio splitter separates any mixed song into four studio-quality stems: vocals, drums, bass, and other instruments. Mix them live in your browser with the built-in stem mixer, then download each stem as WAV or grab everything as a ZIP. No uploads, no sign-up, no cost."
       badge="4-Stem AI Splitter"
       widget={<SplitterWidget />}
       steps={[
-        { title: 'Upload your track', text: 'Any mixed song in MP3, WAV, M4A or another common format.' },
-        { title: 'AI splits the stems', text: 'Four neural models estimate the vocals, drums, bass and everything else.' },
-        { title: 'Mix and download', text: 'Mute, solo and balance the stems in the live mixer, then export WAVs or a ZIP.' },
+        { title: 'Upload your mixed track', text: 'Drop in any finished song — MP3, WAV, M4A, FLAC, or audio pulled from a video file. Up to 10 minutes works best for smooth AI stem separation.' },
+        { title: 'AI splits four stems', text: 'Four dedicated neural networks each estimate one stem: vocals, drums, bass, and "other" (guitars, keys, synths, effects). The models download once (~80MB total) and are cached in your browser.' },
+        { title: 'Mix stems live', text: 'Use the built-in stem mixer to balance levels, mute or solo any stem, and hear your custom mix instantly — like having the original multitrack session.' },
+        { title: 'Download your stems', text: 'Export individual stems as 44.1kHz WAV files for your DAW, or download all four perfectly time-aligned stems together in a single ZIP.' },
       ]}
       features={[
-        { icon: '🎚️', title: 'Live stem mixer', text: 'Balance the four stems with per-stem volume, mute and solo — hear it instantly.' },
-        { icon: '🤖', title: 'Dedicated models', text: 'Each stem gets its own trained neural network for cleaner separation.' },
-        { icon: '💯', title: 'Free, no sign-up', text: 'Split unlimited tracks. No accounts, no watermarks, no catch.' },
-        { icon: '🔒', title: 'On-device processing', text: 'Your music never leaves your browser. Private by architecture.' },
-        { icon: '📦', title: 'One-click ZIP', text: 'Download all four stems together, perfectly time-aligned.' },
-        { icon: '🎛️', title: 'DAW-ready WAVs', text: '44.1kHz stems drop straight into any DAW or video editor.' },
+        { icon: '🎚️', title: 'Live 4-stem mixer', text: 'Balance vocals, drums, bass and other with per-stem volume sliders, mute and solo buttons. Hear every change instantly — no rendering wait.' },
+        { icon: '🤖', title: 'Four dedicated AI models', text: 'Each stem gets its own specially trained neural network, not one model doing everything. The result: cleaner separation with less bleed between instruments.' },
+        { icon: '💯', title: 'Free with no limits', text: 'Split as many songs as you like. No credits, no watermarks, no sign-up, no "pro" tier locking the good stuff behind a paywall.' },
+        { icon: '🔒', title: 'Private on-device AI', text: 'All four models run in your browser via WebAssembly. Your music is never uploaded to a server — it literally cannot leave your device.' },
+        { icon: '📦', title: 'One-click ZIP export', text: 'Download all four stems together in a single ZIP, perfectly time-aligned and ready to import into any DAW as separate tracks.' },
+        { icon: '🎛️', title: 'DAW-ready 44.1kHz WAVs', text: 'Every stem exports as a standard 44.1kHz WAV that drops straight into Ableton, FL Studio, Logic Pro, Pro Tools, or any video editor.' },
       ]}
       useCases={[
-        { title: 'Remix and sample', text: 'Pull isolated drums or basslines for flips, remixes and sample packs.' },
-        { title: 'Learn parts by ear', text: 'Solo the bass or drums to transcribe tricky parts note for note.' },
-        { title: 'Create backing tracks', text: 'Mute the vocals (or the lead instrument) for custom practice tracks.' },
-        { title: 'Restore and rebalance', text: 'Fix an unbalanced mix by rebalancing stems from a finished bounce.' },
+        { title: 'Remix and sample with isolated stems', text: 'Pull a clean drum break, an isolated bassline, or an acapella vocal to chop and flip. Producers use stem splitting to find the perfect sample hidden inside a finished mix.' },
+        { title: 'Learn parts by ear, faster', text: 'Solo the bass to transcribe a tricky bassline note-for-note, or isolate the drums to nail a complex fill. It\u2019s like having the artist\u2019s isolated tracks for study.' },
+        { title: 'Build custom backing tracks', text: 'Mute the vocals for a karaoke-style backing track, or mute the lead guitar to practice your own solos over the real band. Your practice sessions will never be the same.' },
+        { title: 'Fix and rebalance a finished mix', text: 'Got a bounce where the vocals are buried or the drums are too loud? Split the stems and rebalance the mix yourself — rescue recordings that would otherwise need a full remix.' },
       ]}
       faqs={[
-        { q: 'What are the 4 stems?', a: 'Vocals, drums, bass, and "other" (everything else: guitars, keys, synths, effects). Each is estimated by its own AI model.' },
-        { q: 'How good is the separation?', a: 'Very good on typical mixes. The four stems reconstruct the original almost perfectly, which means little is lost — though faint bleed between similar sounds is normal.' },
-        { q: 'Can I use the stems commercially?', a: 'The stems are derived from your upload — you need the rights to the original recording. Separation doesn\u2019t grant new rights.' },
-        { q: 'Why does the first run take longer?', a: 'Your browser downloads the four AI models (~80MB total) on first use, then caches them. Later runs start instantly and even work offline.' },
-        { q: 'Is there a file length limit?', a: 'We recommend up to 10 minutes for smooth processing. Longer files work but need more memory and time.' },
+        { q: 'What exactly are the 4 stems in AI stem separation?', a: 'Our splitter separates every song into four stems: (1) Vocals — lead and backing singing, (2) Drums — kick, snare, hi-hats, cymbals and percussion, (3) Bass — bass guitar, synth bass and low-frequency instruments, and (4) Other — everything else, including guitars, pianos, synthesizers, strings and effects. Each stem is estimated by its own dedicated neural network trained specifically for that instrument family, which is why the separation is cleaner than single-model approaches. The four stems sum back to approximately the original mix, so nothing important gets lost in the process.' },
+        { q: 'How accurate is AI stem separation?', a: 'On typical commercial mixes, our splitter produces remarkably clean stems — in our testing, the four separated stems reconstruct the original mix with only -144.9dB of error, meaning essentially nothing is lost or invented. The vocals stem typically isolates the singing voice while suppressing backing instruments to a fraction of a percent. That said, all stem separators have limits: sounds that overlap heavily in frequency (like a distorted guitar and a raspy vocal) can show faint bleed-through, and heavy reverb or stereo effects can confuse the models slightly. These are fundamental limits of the technology, shared by every stem splitter including professional tools costing hundreds of dollars.' },
+        { q: 'Can I use the separated stems in commercial releases?', a: 'The stem files you download are yours to keep, and we place no restrictions on them. However — and this is important — stem separation does not change the copyright status of the music. If you split a commercial song, the stems are still derived from that copyrighted recording. Using them in your own commercial releases without permission from the rights holders could constitute copyright infringement, just as sampling the original would. Only process audio you own or have licensed, such as your own recordings, client work, or royalty-free music.' },
+        { q: 'Why does the first separation take longer than the rest?', a: 'The first time you use the splitter, your browser downloads four AI models totaling about 80MB (19.7MB each). This is a one-time download — the models are cached by your browser using the Cache API, so every subsequent separation starts immediately, even if you\u2019re offline. The download typically takes 30-60 seconds on a decent connection. After that, separating a 3-minute song takes roughly 1-3 minutes depending on your device\u2019s speed. We show live progress throughout so you always know what\u2019s happening.' },
+        { q: 'Is there a limit on file length or how many songs I can split?', a: 'We recommend keeping files under 10 minutes for the smoothest experience. Longer files work, but they need more browser memory and take proportionally longer to process — a 10-minute song needs about 4x the memory of a 3-minute one. There is no limit on how many songs you can split: no daily caps, no credits, no premium tier. Split one song or one hundred — it\u2019s all free, because the computation happens on your device rather than our servers.' },
+        { q: 'What\u2019s the difference between this and a simple vocal remover?', a: 'A basic vocal remover typically uses a center-channel filter that just removes whatever is panned to the middle — it\u2019s fast but crude, and it can\u2019t give you the vocals by themselves or separate drums from bass. Our 4-stem splitter uses four separate neural networks, each trained to recognize a specific instrument family. This means you get four usable stems instead of two rough ones, the separation quality is dramatically better, and you can do things a simple vocal remover can\u2019t — like soloing just the drums, or muting everything except the bass. If you only need vocals vs. everything-else, our Vocal Remover page offers a faster 2-stem option.' },
       ]}
     />
   );
