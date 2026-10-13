@@ -306,34 +306,37 @@ export default function VoiceChangerPage() {
       path="/voice-changer"
       seoTitle="Voice Changer — Fun Voice Effects Free in Your Browser | AI Music Remover"
       seoDescription="Change your voice with free browser effects: deep, high, chipmunk, robot, echo and more. Record or upload, preview and download MP3."
-      h1="Change your voice in seconds"
-      sub="Record or upload your voice, pick an effect, and download the result. Free, private, in your browser."
-      badge="Voice Effects"
+      h1="Change Your Voice in Seconds — Free Online Voice Changer"
+      sub="Record your voice or upload any audio clip, then transform it with professional voice effects: go deep and dramatic, high and cartoonish, robotic, or echoing like you\u2019re in a cave. Plus, explore our Voice Library with your device\u2019s built-in premium voices. Preview every effect instantly and download the result as MP3 or WAV — free, private, right in your browser."
+      badge="Voice Changer"
       widget={<><VoiceChangerWidget /><VoiceLibrary /></>}
       steps={[
-        { title: 'Record or upload', text: 'Use your microphone or drop in an audio clip.' },
-        { title: 'Pick an effect', text: 'Deep, high, chipmunk, robot, echo or cave — hear it instantly.' },
-        { title: 'Download', text: 'Export your new voice as MP3 or WAV.' },
+        { title: 'Record or upload your voice', text: 'Hit record and speak into your microphone, or drop in any audio clip — a voice memo, a song vocal, a podcast snippet. No uploads to any server; it stays on your device.' },
+        { title: 'Pick an effect or a library voice', text: 'Choose from 6 DSP effects (Deep, High, Chipmunk, Robot, Echo, Cave) for instant transformation — or browse the Voice Library to hear your text read by your device\u2019s premium built-in voices.' },
+        { title: 'Preview instantly', text: 'Every effect renders in real time. Toggle between them, hear the difference immediately, and find the perfect character for your project.' },
+        { title: 'Download your new voice', text: 'Export the transformed audio as MP3 for sharing or WAV for maximum quality. Use it in videos, streams, podcasts, games, or just for fun.' },
       ]}
       features={[
-        { icon: '🎭', title: '6 fun presets', text: 'From subtle pitch shifts to full robot mode.' },
-        { icon: '🎤', title: 'Mic recording', text: 'Record directly in the browser — no uploads.' },
-        { icon: '💯', title: 'Free unlimited', text: 'Sign in once — free forever, no watermarks, no limits.' },
-        { icon: '🔒', title: 'Private', text: 'Your voice never leaves your device.' },
-        { icon: '⚡', title: 'Fast DSP', text: 'Real digital signal processing — no fake filters.' },
-        { icon: '🎵', title: 'MP3 & WAV', text: 'Download in the format you need.' },
+        { icon: '🎭', title: '6 professional voice effects', text: 'Deep Voice for movie-trailer drama, Chipmunk for comedy, Robot via ring modulation, Echo and Cave with realistic delay networks — each one real DSP, not a cheap filter.' },
+        { icon: '🗣️', title: 'Premium Voice Library', text: 'Your device ships with high-quality neural voices (Microsoft, Apple, Google). Browse them by language, preview any text, and use them for narration — free, no API needed.' },
+        { icon: '🎤', title: 'One-tap mic recording', text: 'Record directly in your browser with no setup. Your microphone audio is captured locally and never transmitted anywhere.' },
+        { icon: '💯', title: 'Free with honest limits', text: 'A free sign-in unlocks unlimited voice changing. No watermarks on downloads, no "pro voices" locked behind a paywall, no per-minute charges.' },
+        { icon: '🔒', title: 'Your voice stays yours', text: 'Voice recordings are deeply personal. Ours never leave your device — no cloud processing, no voiceprint databases, no exceptions.' },
+        { icon: '⚡', title: 'Real-time DSP engine', text: 'Pitch shifting via phase-vocoder, ring modulation, and feedback delay networks — genuine digital signal processing running at 44.1kHz, not pre-baked samples.' },
       ]}
       useCases={[
-        { title: 'Content & streaming', text: 'Character voices for videos, streams and podcasts.' },
-        { title: 'Pranks & fun', text: 'Surprise friends (with their knowledge!) with a new voice.' },
-        { title: 'Anonymity', text: 'Disguise your voice in sensitive recordings.' },
-        { title: 'Creative projects', text: 'Voice-overs for animations, games and demos.' },
+        { title: 'Content creation and streaming', text: 'Give your YouTube videos, Twitch streams, and TikToks distinct character voices. Narrate as a robot, do comedy sketches as a chipmunk, or add dramatic deep-voice intros — all without hiring voice actors.' },
+        { title: 'Game and animation voice-overs', text: 'Indie developers and animators: prototype character voices in seconds. Try five different villain voices before committing, or generate placeholder dialogue to time your animations.' },
+        { title: 'Protect your privacy', text: 'Need to share a recording without revealing your identity? Disguise your voice for whistleblowing, sensitive testimonials, or anonymous tips. (Note: determined forensic analysis can sometimes reverse simple effects — for high-stakes anonymity, consult a security professional.)' },
+        { title: 'Pranks and fun (with consent!)', text: 'Surprise your friends with a dramatic movie-trailer reading of your group chat, or leave a voicemail as a robot. Just make sure everyone\u2019s in on the joke — never use voice effects to deceive or impersonate.' },
       ]}
       faqs={[
-        { q: 'How do the voice effects work?', a: 'Real DSP: pitch shifting via a phase vocoder, ring modulation for robot, and delay networks for echo and cave. Everything runs locally.' },
-        { q: 'Can I use it live on calls?', a: 'This tool processes recordings and uploads. Live call integration isn\u2019t supported.' },
-        { q: 'Is it free?', a: 'Yes — unlimited effects. A free sign-in is required to process files.' },
-        { q: 'Can I impersonate someone?', a: 'Please don\u2019t. These effects are for fun and creativity — never use them to deceive, defraud or mislead anyone.' },
+        { q: 'How do the voice effects actually work?', a: 'Each effect is genuine digital signal processing, not a simple playback trick. Deep Voice and High Voice use a phase-vocoder pitch shifter that changes pitch without altering speed. Chipmunk combines pitch-shifting up with slight formant adjustment for that cartoon character. Robot uses ring modulation — multiplying your voice by a fixed-frequency carrier wave, the same technique behind classic sci-fi droid voices. Echo and Cave use feedback delay networks with filtered repeats to simulate real acoustic spaces. Everything runs locally in your browser at 44.1kHz using the Web Audio API, so the quality is clean and the processing is instant.' },
+        { q: 'What is the Voice Library and where do those voices come from?', a: 'The Voice Library taps into your device\u2019s built-in text-to-speech voices via the Web Speech API — the same high-quality neural voices your operating system uses. On Windows, that\u2019s Microsoft\u2019s neural voices; on Mac and iPhone, Apple\u2019s; on Android, Google\u2019s. These are genuinely premium voices — the kind AI voice companies charge $20+/month to access via API — and they\u2019re already on your device, free to use. Type any text, pick a voice, and preview it. Voice availability varies by device and browser, and you\u2019ll typically find 5-30 options spanning multiple languages and accents.' },
+        { q: 'Can I use the voice changer live on calls or streams?', a: 'This tool processes recordings and uploaded files — it doesn\u2019t create a virtual microphone for live use. For live voice changing on Discord calls or streams, you\u2019d need dedicated software like Voicemod or Clownfish that installs a virtual audio device at the OS level (browsers can\u2019t do this for security reasons). Our workflow is: record or upload → apply effect → download → use the file wherever you like. For pre-recorded content like videos and podcasts, this is actually more flexible than live processing because you can try unlimited effects on the same take.' },
+        { q: 'Is it really free? Why do I need to sign in?', a: 'Yes, completely free with no watermarks and no usage limits. We ask for a free sign-in (email and password — no credit card, no personal details beyond that) to prevent automated abuse of the processing features. It takes 30 seconds, and your account also gives you access to your processing history across devices. We never sell your data, and your voice recordings are processed locally — they\u2019re never uploaded to our servers, signed in or not.' },
+        { q: 'Can I use this to impersonate someone else?', a: 'Please don\u2019t — and be aware it wouldn\u2019t work well anyway. These are creative effects (pitch shifts, robot modulation, reverb), not voice cloning: they transform YOUR voice\u2019s character but can\u2019t make you sound like a specific other person. True voice cloning requires AI trained on hours of a target\u2019s voice, which this tool doesn\u2019t do. Using voice effects to deceive, defraud, or mislead anyone — fake customer service calls, impersonating authority figures, creating misleading recordings — is unethical and potentially illegal. Our effects are for creativity, comedy, content, and privacy. Keep it fun, keep it honest, and make sure everyone involved knows a voice effect is being used.' },
+        { q: 'What audio formats can I upload and download?', a: 'Upload: MP3, WAV, M4A, OGG, FLAC, and WEBM audio, plus audio extracted from MP4, MOV, and other video files. Or skip files entirely and record straight from your microphone. Download: MP3 (great for sharing, small files) or WAV (uncompressed 44.1kHz, best quality for further editing). Both are free, both have no watermark. For the best effect quality, start with a clean, close-mic\u2019d recording — heavy background noise gets transformed along with your voice.' },
       ]}
     />
   );
