@@ -160,35 +160,37 @@ export default function NoiseRemoverPage() {
       path="/noise-remover"
       seoTitle="Noise Remover — Remove Hiss, Hum & Background Noise Free | AI Music Remover"
       seoDescription="Remove hiss, hum, room noise and wind from any audio or video. Free spectral noise reduction in your browser — before/after preview included."
-      h1="Remove background noise from any audio"
-      sub="Clean up hiss, hum, room tone and wind. Hear the before/after difference instantly — free in your browser."
+      h1="Remove Background Noise from Any Audio — Free Noise Remover"
+      sub="Clean up hiss, hum, room tone, fan noise, and wind from voice memos, podcasts, videos, and music recordings. Our free noise remover learns your audio\u2019s unique noise profile automatically, then removes it while keeping voices natural. Hear the before/after difference instantly, tune the intensity to taste, and download the cleaned audio — all in your browser, all free."
       badge="Noise Remover"
       widget={<NoiseRemoverWidget />}
       steps={[
-        { title: 'Upload your audio', text: 'Voice memo, podcast, video audio — anything with unwanted background noise.' },
-        { title: 'Set the intensity', text: 'The tool learns your noise profile automatically; you control how aggressively it\u2019s removed.' },
-        { title: 'Compare & download', text: 'Toggle before/after to hear the difference, then export WAV or MP3.' },
+        { title: 'Upload your noisy audio', text: 'Voice memo, podcast episode, video soundtrack, old tape transfer — anything with unwanted background hiss, hum, or room noise. MP3, WAV, M4A, or video files all work.' },
+        { title: 'Noise profile detected automatically', text: 'The tool analyzes the start of your file to learn what the background noise "sounds like" — its frequency fingerprint. Tip: leave a half-second of pure background noise at the beginning for the cleanest results.' },
+        { title: 'Set your intensity', text: 'Control how aggressively the noise is removed with a simple slider. Gentle for natural ambience, stronger for distracting hiss — you\u2019re always in charge.' },
+        { title: 'Compare and download', text: 'Toggle between before and after with one tap to hear exactly what changed. When it sounds right, export as WAV for quality or MP3 for sharing.' },
       ]}
       features={[
-        { icon: '🔇', title: 'Hiss & hum removal', text: 'Spectral gating targets steady background noise while preserving voices.' },
-        { icon: '🎚️', title: 'Intensity control', text: 'Dial in the perfect balance between clean and natural.' },
-        { icon: '🔀', title: 'Before/after toggle', text: 'A/B compare with one tap so you always know what changed.' },
-        { icon: '💯', title: 'Free & unlimited', text: 'No accounts, no watermarks, no limits.' },
-        { icon: '🔒', title: 'Private', text: 'Processed on your device — sensitive recordings stay yours.' },
-        { icon: '🎙️', title: 'Voice & music', text: 'Works on speech, podcasts, field recordings and music.' },
+        { icon: '🔇', title: 'Hiss, hum & room tone removal', text: 'Spectral gating targets steady background noise — air conditioner hum, mic preamp hiss, room tone, wind rumble — while preserving the voices and music you want to keep.' },
+        { icon: '🎚️', title: 'Precision intensity control', text: 'A single intuitive slider dials the perfect balance between "clean" and "natural." No confusing thresholds, attack times, or reduction curves to learn.' },
+        { icon: '🔀', title: 'Instant before/after toggle', text: 'A/B compare the original and cleaned versions with one tap. You\u2019ll always know exactly what the processing changed — no surprises in your download.' },
+        { icon: '💯', title: 'Free and unlimited', text: 'Clean as many files as you want. No accounts, no watermarks, no "5 free minutes per month" — professional noise reduction without the subscription.' },
+        { icon: '🔒', title: 'Private on-device processing', text: 'Sensitive recordings — interviews, legal dictation, personal memos — never leave your device. Everything is processed locally in your browser.' },
+        { icon: '🎙️', title: 'Made for voices and music', text: 'Optimized for speech (podcasts, videos, calls, lectures) but equally at home cleaning up music demos, field recordings, and digitized tapes.' },
       ]}
       useCases={[
-        { title: 'Podcast cleanup', text: 'Remove room tone and mic hiss from episodes.' },
-        { title: 'Video audio', text: 'Clean up wind and handling noise from camera audio.' },
-        { title: 'Voice memos', text: 'Make phone recordings clear and listenable.' },
-        { title: 'Old recordings', text: 'Reduce tape hiss and hum from digitized archives.' },
+        { title: 'Podcast episodes that sound pro', text: 'Remove the room tone, mic hiss, and computer fan hum that screams "recorded in a bedroom." Your listeners will think you upgraded to a treated studio — the difference is that dramatic.' },
+        { title: 'Video audio rescue', text: 'Camera audio plagued by wind, handling noise, or air conditioning? Clean it up before your edit and save footage that would otherwise be unusable.' },
+        { title: 'Voice memos worth keeping', text: 'That brilliant idea you recorded on your phone in a noisy café, the lecture captured from the back row — make them clear and listenable instead of deleting them.' },
+        { title: 'Restore old recordings', text: 'Digitized cassette tapes, vinyl rips, and old family recordings carry decades of hiss and hum. Reduce the noise while keeping the warmth and character of the original.' },
       ]}
       faqs={[
-        { q: 'How does it learn the noise?', a: 'It analyzes the start of your file to build a noise profile, then attenuates matching frequencies throughout. For best results, leave a half-second of pure background noise at the start.' },
-        { q: 'Will it affect voices or music?', a: 'At moderate intensity, voices stay natural. Very high intensity can make audio sound "underwater" — use the before/after toggle to find the sweet spot.' },
-        { q: 'What kinds of noise does it remove?', a: 'Steady noises: hiss, hum, room tone, fan noise, wind rumble. Sudden sounds (door slams, coughs) are harder for any noise remover.' },
-        { q: 'Is it free?', a: 'Yes — unlimited use, no sign-up.' },
-        { q: 'Does it work on video files?', a: 'Yes — upload MP4, MOV or WEBM and we\u2019ll process the audio track. (Video re-export with cleaned audio is coming soon.)' },
+        { q: 'How does the noise remover learn what to remove?', a: 'Our noise remover uses spectral noise profiling. When you upload a file, it analyzes the first half-second to build a "fingerprint" of the background noise — which frequencies are present, and how loud they are. It then scans the entire file and attenuates those specific frequencies wherever they appear, while leaving other frequencies (like the human voice) largely untouched. This is the same fundamental approach used in professional tools like iZotope RX and Adobe Audition\u2019s noise reduction, simplified into a one-slider interface. For the best results, make sure your recording starts with a brief moment of pure background noise — no talking, no music — so the profiler gets a clean sample of what to remove.' },
+        { q: 'Will noise removal make voices sound robotic or "underwater"?', a: 'At moderate intensity settings, voices stay completely natural — you\u2019ll just notice the background got quieter. The "underwater" or "metallic" artifacts people associate with noise reduction happen when the processing is pushed too aggressively: the algorithm starts removing frequencies that are part of the voice itself, not just the noise. That\u2019s exactly why we built the before/after toggle and the intensity slider. Start around the middle, listen to the result, and increase gradually until the noise is gone but the voice still sounds like the person. Every recording is different, so trust your ears — if it starts sounding processed, back off a notch. The sweet spot is usually easy to find.' },
+        { q: 'What kinds of noise can it remove — and what can\u2019t it?', a: 'It excels at steady, consistent background noise: electrical hum (50/60Hz and harmonics), preamp hiss, room tone, air conditioner drone, computer fan noise, wind rumble, and tape hiss. These are the noises with a stable frequency fingerprint that the profiler can learn and target. It struggles with sudden, irregular sounds — a door slamming, a dog barking, someone coughing, keyboard clicks — because those don\u2019t have a consistent profile to learn. It also can\u2019t separate two voices talking at once, or remove music playing behind speech (for that, try our AI stem separation tools). Think of it as a specialist for "the room sounds bad," not "something loud happened."' },
+        { q: 'Is the noise remover really free with no limits?', a: 'Yes — unlimited files, unlimited length (within the 10-minute recommended guideline), no account, no watermark. Professional noise reduction plugins cost $100-400, and online "AI" cleaners typically give you a few free minutes before demanding a subscription. We can offer it free because the spectral processing runs entirely on your device using the Web Audio API — we have no server costs per file. Your audio is processed locally, which is also why it\u2019s private: sensitive recordings never touch the internet.' },
+        { q: 'Can I clean the audio from a video file?', a: 'Absolutely. Upload MP4, MOV, AVI, 3GP, or WEBM video files and we\u2019ll automatically extract the audio track for noise reduction. You\u2019ll get back a cleaned audio file (WAV or MP3) that you can sync back to your video in any editor. This is perfect for vloggers, course creators, and anyone whose camera audio picked up wind, room echo, or handling noise. (Full video re-export with the cleaned audio muxed back in is on our roadmap — for now, the two-step process of cleaning audio separately gives you the most control anyway.)' },
+        { q: 'How is this different from the noise suppression in Zoom or Discord?', a: 'Call apps use real-time noise suppression optimized for live conversation — it has to work with ~20ms of latency, so it\u2019s aggressive and can clip the start of words. Our tool processes your file offline, which means it can analyze the entire recording first, build an accurate noise profile, and apply careful spectral gating without the time pressure. The result is noticeably cleaner and more natural, especially for content you\u2019ll publish. Think of Zoom\u2019s filter as a quick tidy-up and ours as a proper deep clean.' },
       ]}
     />
   );
